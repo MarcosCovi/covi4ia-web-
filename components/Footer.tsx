@@ -1,16 +1,17 @@
 import { Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const links = {
   Servicios: [
-    { label: 'Aprendemos',    href: '#servicios' },
-    { label: 'Automatizamos', href: '#servicios' },
-    { label: 'Optimizamos',   href: '#servicios' },
+    { label: 'Aprendemos',    href: '/servicios/aprendemos'    },
+    { label: 'Automatizamos', href: '/servicios/automatizamos' },
+    { label: 'Optimizamos',   href: '/servicios/optimizamos'   },
   ],
   Empresa: [
-    { label: 'Por qué COVI4IA', href: '#nosotros'  },
-    { label: 'Para quién',      href: '#audiencia' },
-    { label: 'Contacto',        href: '#contacto'  },
+    { label: 'Por qué COVI4IA', href: '/#nosotros'  },
+    { label: 'Para quién',      href: '/#audiencia' },
+    { label: 'Contacto',        href: '/#contacto'  },
   ],
 }
 
@@ -25,13 +26,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/lion.png"
-                alt="COVI4IA"
-                width={40}
-                height={40}
-                className="drop-shadow-[0_0_10px_rgba(0,212,255,0.4)]"
-              />
+              <Image src="/lion.png" alt="COVI4IA" width={40} height={40}
+                className="drop-shadow-[0_0_10px_rgba(0,212,255,0.4)]" />
               <span className="font-display text-2xl font-bold tracking-tight">
                 <span className="text-white">COVI</span>
                 <span className="text-brand-cyan">4</span>
@@ -48,24 +44,16 @@ export default function Footer() {
               Consultoría en IA generativa aplicada a Supply Chain.
               Formación, agentes virtuales y diagnóstico para empresas latinoamericanas.
             </p>
-
             <div className="flex gap-3 mt-6">
-              {[
-                { icon: Linkedin, label: 'LinkedIn', href: '#' },
-                { icon: Mail,     label: 'Email',    href: 'mailto:hola@covi4ia.com' },
-              ].map(s => {
-                const Icon = s.icon
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    aria-label={s.label}
-                    className="p-2 rounded-lg border border-white/10 text-brand-mid-gray hover:text-white hover:border-white/25 transition-all"
-                  >
-                    <Icon size={16} />
-                  </a>
-                )
-              })}
+              <a href="https://www.linkedin.com/in/covi4ia-721985196" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="p-2 rounded-lg border border-white/10 text-brand-mid-gray hover:text-white hover:border-white/25 transition-all">
+                <Linkedin size={16} />
+              </a>
+              <a href="mailto:sales@covi4ia.com" aria-label="Email"
+                className="p-2 rounded-lg border border-white/10 text-brand-mid-gray hover:text-white hover:border-white/25 transition-all">
+                <Mail size={16} />
+              </a>
             </div>
           </div>
 
@@ -76,12 +64,10 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {items.map(item => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-sm text-brand-mid-gray hover:text-white transition-colors"
-                    >
+                    <Link href={item.href}
+                      className="text-sm text-brand-mid-gray hover:text-white transition-colors">
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -89,14 +75,9 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-brand-mid-gray text-xs">
-            © {year} COVI4IA — Argentina · Latinoamérica
-          </p>
-          <p className="text-brand-mid-gray text-xs">
-            Todos los derechos reservados
-          </p>
+          <p className="text-brand-mid-gray text-xs">© {year} COVI4IA — Argentina · Latinoamérica</p>
+          <p className="text-brand-mid-gray text-xs">Todos los derechos reservados</p>
         </div>
       </div>
     </footer>
