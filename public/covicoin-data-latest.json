@@ -1,40 +1,110 @@
 {
-  "date": "2026-06-19",
+  "date": "2026-07-10",
   "time": "07:00",
   "market": {
-    "btc_price": 62875,
-    "eth_price": 1707,
-    "sol_price": 69.57,
-    "bnb_price": 581,
-    "tao_price": 254,
-    "ondo_price": 0.38,
-    "near_price": 2.31,
-    "fet_price": 0.205,
-    "gala_price": 0.0031,
-    "total_market_cap": "$2.3T",
-    "btc_dominance": "58%",
-    "fear_greed": 23,
-    "altcoin_season": 46,
-    "dxy": 100.72
+    "btc_price": 107850,
+    "eth_price": 2580,
+    "sol_price": 152.4,
+    "bnb_price": 645,
+    "tao_price": 312,
+    "ondo_price": 0.92,
+    "near_price": 3.85,
+    "fet_price": 0.68,
+    "gala_price": 0.0189,
+    "total_market_cap": "$3.4T",
+    "btc_dominance": "56.4%",
+    "fear_greed": 62,
+    "altcoin_season": 58,
+    "dxy": 97.8
   },
   "signals": {
-    "btc": "ACUMULAR",
-    "eth": "ACUMULAR",
-    "sol": "ESPERAR",
+    "btc":  "ACUMULAR",
+    "eth":  "COMPRAR",
+    "sol":  "ACUMULAR",
+    "bnb":  "ESPERAR",
+    "tao":  "COMPRAR",
     "ondo": "COMPRAR",
     "near": "ACUMULAR",
-    "gala": "ESPERAR",
-    "tao": "COMPRAR",
-    "fet": "ACUMULAR",
-    "bnb": "COMPRAR"
+    "fet":  "ACUMULAR",
+    "gala": "ESPERAR"
   },
-  "top_news": [
-    { "asset": "TAO", "text": "U.S. export order sobre IA centralizada acelera rotación hacia Bittensor. Whale compra $18M." },
-    { "asset": "ONDO", "text": "RWA tokenizados alcanzan ATH de $8B en Ethereum. OUSG TVL llega a $680M. Perps launch live." },
-    { "asset": "ETH", "text": "Pectra upgrade activo. ETF staking esperado para Q3 2026. ETH/BTC en mínimos históricos." },
-    { "asset": "BTC", "text": "ETFs spot acumulan $48B en AUM. DXY en máximos de 13 meses presiona precios a la baja." },
-    { "asset": "SOL", "text": "DeFi TVL en $5.5B. Jito lidera liquid staking con $1.2B. SOL bajo MM50 diario." }
+  "macro_narrative": "El mercado cripto opera con momentum positivo respaldado por la debilidad del DXY (97.8) y la entrada continua de capital institucional vía ETFs spot de Bitcoin. El S&P500 en máximos históricos reduce la aversión al riesgo y favorece la rotación hacia activos digitales. El Fear & Greed en 62 (Greed) indica apetito moderado sin señales de sobreextensión. BTC consolida por encima de los $100k — nivel psicológico clave mantenido por 30 días consecutivos.",
+  "portfolio_analysis": [
+    { "asset": "btc",  "signal": "ACUMULAR", "support": "102,000", "resistance": "115,000", "change_24h": 1.8,  "analysis": "ETFs spot acumulan $68B en AUM. Ballenas netas compradoras. Soporte en $102k sólido." },
+    { "asset": "eth",  "signal": "COMPRAR",  "support": "2,400",   "resistance": "3,200",   "change_24h": 3.2,  "analysis": "Pectra activo. ETF staking en Q3 esperado. ETH/BTC recuperando mínimos históricos." },
+    { "asset": "sol",  "signal": "ACUMULAR", "support": "140",     "resistance": "180",     "change_24h": 2.1,  "analysis": "DeFi TVL en $7.8B. Jito lidera liquid staking con $2.1B. Momentum técnico positivo." },
+    { "asset": "bnb",  "signal": "ESPERAR",  "support": "610",     "resistance": "690",     "change_24h": 0.4,  "analysis": "Consolidación en rango. Aguardar ruptura de $690 para posición larga." },
+    { "asset": "tao",  "signal": "COMPRAR",  "support": "280",     "resistance": "380",     "change_24h": 5.8,  "analysis": "Narrativa IA descentralizada vs. IA centralizada. Entrada institucional acelerada." },
+    { "asset": "ondo", "signal": "COMPRAR",  "support": "0.82",    "resistance": "1.20",    "change_24h": 4.5,  "analysis": "RWA tokenizados en ATH $12B en Ethereum. OUSG TVL $890M. Perps launch live." },
+    { "asset": "near", "signal": "ACUMULAR", "support": "3.40",    "resistance": "4.80",    "change_24h": 2.9,  "analysis": "Expansión de cadena de intención. Proyectos AI Agents activos. Soporte técnico." },
+    { "asset": "fet",  "signal": "ACUMULAR", "support": "0.58",    "resistance": "0.90",    "change_24h": 3.6,  "analysis": "ASI Alliance con AGIX y OCEAN. Narrativa de AI Agents con momentum. DCA favorable." },
+    { "asset": "gala", "signal": "ESPERAR",  "support": "0.0160",  "resistance": "0.0240",  "change_24h": -0.8, "analysis": "Gaming en bear sub-ciclo. Aguardar catalizador de lanzamiento de juego AAA." }
   ],
-  "daily_recommendation": "Mercado en Extreme Fear (23/100) — zona históricamente favorable para acumulación selectiva. Priorizar BTC y ETH con DCA en 3 tramos. Mantener 40% en stablecoins con yield en Aave/Morpho. TAO y ONDO son las mejores apuestas narrativas del ciclo. Evitar apalancamiento hasta que Fear & Greed supere 40.",
-  "report_file": "covicoin-alpha-report-2026-06-19.html"
+  "top_news": [
+    { "asset": "TAO",  "text": "Reguladores EU aprueban marco para IA descentralizada — favorece directamente a Bittensor. Whale acumula $32M en 48h." },
+    { "asset": "ONDO", "text": "BlackRock integra OUSG en su plataforma de tokenización. RWA en Ethereum alcanza $12B de TVL — nuevo ATH." },
+    { "asset": "ETH",  "text": "Cámara de Representantes USA aprueba FIT21 — marco regulatorio favorable para DeFi y ETH como commodity." },
+    { "asset": "BTC",  "text": "MicroStrategy añade 4,200 BTC — acumulado supera 226,000 BTC. ETF AUM total en máximo de $68B." },
+    { "asset": "SOL",  "text": "Visa expande red de pagos a Solana. Transacciones diarias superan 120M — nuevo ATH de red." },
+    { "asset": "FET",  "text": "ASI Alliance lanza primer agente autónomo de gestión de portafolio en mainnet. Integración con ChatGPT anunciada." }
+  ],
+  "market_zones": {
+    "btc": {
+      "demand": "$102,000 – $105,000",
+      "supply": "$112,000 – $118,000",
+      "volume": "Alto — $42B en 24h",
+      "narrative": "BTC mantiene estructura alcista con HH y HL consecutivos desde los $95k. La zona de demanda $102k–$105k tiene 3 touches confirmados. Ruptura de $112k habilitaría extensión a $125k–$130k según Fibonacci."
+    },
+    "eth": {
+      "demand": "$2,380 – $2,480",
+      "supply": "$2,800 – $3,200",
+      "volume": "Moderado — $18B en 24h",
+      "narrative": "ETH recupera estructura técnica post-Pectra. La zona de demanda $2,380–$2,480 es el soporte crítico. Ruptura de $2,800 con volumen confirmaría continuación alcista hacia $3,200."
+    }
+  },
+  "opportunities": [
+    {
+      "asset": "TAO",
+      "narrative": "IA Descentralizada",
+      "reason": "La narrativa de IA descentralizada vs. centralizada es el tema dominante de Q3 2026. Bittensor es el protocolo líder. Con regulación EU favorable y acumulación institucional, el riesgo/recompensa es óptimo en la zona actual.",
+      "target": "$450"
+    },
+    {
+      "asset": "ONDO",
+      "narrative": "Real World Assets (RWA)",
+      "reason": "La tokenización de activos del mundo real alcanzó $12B en TVL. ONDO es el líder del sector con OUSG y la integración de BlackRock. El catalizador de perps está live — momentum narrativo máximo.",
+      "target": "$1.50"
+    },
+    {
+      "asset": "FET",
+      "narrative": "AI Agents",
+      "reason": "La ASI Alliance (FET+AGIX+OCEAN) lanza agentes autónomos en mainnet. La integración con ChatGPT amplifica visibilidad. La narrativa de AI Agents es el próximo ciclo narrativo.",
+      "target": "$1.20"
+    }
+  ],
+  "defi_yields": [
+    { "protocol": "Aave",       "asset": "USDC",    "chain": "Ethereum", "apy": 9.2,  "tvl": "$18.4B", "risk": "Bajo" },
+    { "protocol": "Morpho",     "asset": "USDT",    "chain": "Ethereum", "apy": 11.4, "tvl": "$4.8B",  "risk": "Bajo" },
+    { "protocol": "Lido",       "asset": "stETH",   "chain": "Ethereum", "apy": 4.1,  "tvl": "$38B",   "risk": "Muy Bajo" },
+    { "protocol": "Jito",       "asset": "jitoSOL", "chain": "Solana",   "apy": 8.7,  "tvl": "$2.1B",  "risk": "Bajo" },
+    { "protocol": "EigenLayer", "asset": "ETH",     "chain": "Ethereum", "apy": 6.3,  "tvl": "$12B",   "risk": "Medio" },
+    { "protocol": "Pendle",     "asset": "stETH",   "chain": "Ethereum", "apy": 18.5, "tvl": "$3.2B",  "risk": "Medio" }
+  ],
+  "altcoin_narrative": "Altcoin Season Index en 58 — zona de transición entre Bitcoin Season y Altcoin Season. Históricamente, valores entre 55-70 preceden a rallies de altcoins de alta capitalización (ETH, SOL, BNB). La narrativa de AI (TAO, FET) y RWA (ONDO) lidera la rotación. Evitar altcoins sin narrativa clara — el mercado premia fundamentales en esta fase.",
+  "whale_movements": [
+    { "asset": "BTC",  "amount": "$48M",  "type": "Transfer", "from": "Binance",  "to": "Cold Wallet",   "impact": "Bullish", "time": "2h ago",  "note": "Acumulación — retiro de exchange" },
+    { "asset": "ETH",  "amount": "$22M",  "type": "Transfer", "from": "Coinbase", "to": "DeFi Protocol", "impact": "Neutral", "time": "4h ago",  "note": "Staking en Lido" },
+    { "asset": "TAO",  "amount": "$32M",  "type": "Purchase", "from": "OTC Desk", "to": "Nuevo Wallet",  "impact": "Bullish", "time": "6h ago",  "note": "Compra OTC institucional confirmada" },
+    { "asset": "USDT", "amount": "$120M", "type": "Transfer", "from": "Tether",   "to": "Binance",       "impact": "Bullish", "time": "8h ago",  "note": "Mint fresco — poder comprador entrante" },
+    { "asset": "SOL",  "amount": "$18M",  "type": "Transfer", "from": "Unknown",  "to": "Jito",          "impact": "Bullish", "time": "12h ago", "note": "Liquid staking — manos largas" }
+  ],
+  "conclusions": [
+    "Acumular ETH entre $2,400–$2,500 — mejor relación riesgo/recompensa del portfolio. Catalizador ETF staking en Q3.",
+    "TAO y ONDO: mejores apuestas narrativas del ciclo (IA Descentralizada + RWA). Sizing 3-5% cada uno.",
+    "Mantener 30% en stablecoins con yield: Morpho USDT (11.4% APY) o Aave USDC (9.2% APY).",
+    "BTC: no perseguir precio arriba de $110k. Esperar pullback a $102k–$105k para DCA en 2 tramos.",
+    "Evitar GALA y BNB hasta catalizador concreto. Zona de consolidación sin momentum direccional."
+  ],
+  "daily_recommendation": "Mercado en zona de Greed (62/100) — momentum positivo sin señales de euforia extrema. ETH y TAO ofrecen la mejor ecuación riesgo/recompensa hoy. Priorizar staking y DeFi de bajo riesgo para el capital en stablecoins. BTC consolida sobre $107k — mantener posición sin agregar por encima de $110k.",
+  "report_file": "covicoin-alpha-report-2026-07-10.html"
 }

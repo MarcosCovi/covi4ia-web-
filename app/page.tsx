@@ -7,7 +7,7 @@ import WhyCovi              from '@/components/WhyCovi'
 import CasosDeUso           from '@/components/CasosDeUso'
 import Audience             from '@/components/Audience'
 import Team                 from '@/components/Team'
-import CovicoinAlphaSection from '@/components/CovicoinAlphaSection'
+import CovicoinAlphaPromo   from '@/components/CovicoinAlphaPromo'
 import FAQ                  from '@/components/FAQ'
 import CTASection           from '@/components/CTASection'
 import Footer               from '@/components/Footer'
@@ -25,7 +25,7 @@ export default function Home() {
         <CasosDeUso />
         <Audience />
         <Team />
-        <CovicoinAlphaSection />
+        <CovicoinAlphaPromo />
         <FAQ />
         <CTASection />
       </main>
