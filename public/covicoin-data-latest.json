@@ -1,0 +1,40 @@
+{
+  "date": "2026-06-19",
+  "time": "07:00",
+  "market": {
+    "btc_price": 62875,
+    "eth_price": 1707,
+    "sol_price": 69.57,
+    "bnb_price": 581,
+    "tao_price": 254,
+    "ondo_price": 0.38,
+    "near_price": 2.31,
+    "fet_price": 0.205,
+    "gala_price": 0.0031,
+    "total_market_cap": "$2.3T",
+    "btc_dominance": "58%",
+    "fear_greed": 23,
+    "altcoin_season": 46,
+    "dxy": 100.72
+  },
+  "signals": {
+    "btc": "ACUMULAR",
+    "eth": "ACUMULAR",
+    "sol": "ESPERAR",
+    "ondo": "COMPRAR",
+    "near": "ACUMULAR",
+    "gala": "ESPERAR",
+    "tao": "COMPRAR",
+    "fet": "ACUMULAR",
+    "bnb": "COMPRAR"
+  },
+  "top_news": [
+    { "asset": "TAO", "text": "U.S. export order sobre IA centralizada acelera rotación hacia Bittensor. Whale compra $18M." },
+    { "asset": "ONDO", "text": "RWA tokenizados alcanzan ATH de $8B en Ethereum. OUSG TVL llega a $680M. Perps launch live." },
+    { "asset": "ETH", "text": "Pectra upgrade activo. ETF staking esperado para Q3 2026. ETH/BTC en mínimos históricos." },
+    { "asset": "BTC", "text": "ETFs spot acumulan $48B en AUM. DXY en máximos de 13 meses presiona precios a la baja." },
+    { "asset": "SOL", "text": "DeFi TVL en $5.5B. Jito lidera liquid staking con $1.2B. SOL bajo MM50 diario." }
+  ],
+  "daily_recommendation": "Mercado en Extreme Fear (23/100) — zona históricamente favorable para acumulación selectiva. Priorizar BTC y ETH con DCA en 3 tramos. Mantener 40% en stablecoins con yield en Aave/Morpho. TAO y ONDO son las mejores apuestas narrativas del ciclo. Evitar apalancamiento hasta que Fear & Greed supere 40.",
+  "report_file": "covicoin-alpha-report-2026-06-19.html"
+}
