@@ -191,72 +191,69 @@ export default function CovicoinAlphaFullReport() {
 
             {/* ── Bitcoin Coin Visual ───────────────────────────────── */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: "visible" }}>
                 <defs>
-                  <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#f7931a" stopOpacity="0.35" />
+                  <radialGradient id="cc-bg" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#f7931a" stopOpacity="0.25" />
                     <stop offset="100%" stopColor="#f7931a" stopOpacity="0" />
                   </radialGradient>
-                  <radialGradient id="coinGrad" cx="38%" cy="32%" r="70%">
-                    <stop offset="0%" stopColor="#fde68a" />
-                    <stop offset="35%" stopColor="#f7931a" />
-                    <stop offset="100%" stopColor="#78350f" />
+                  <radialGradient id="cc-coin" cx="34%" cy="28%" r="68%">
+                    <stop offset="0%"   stopColor="#fef3c7" />
+                    <stop offset="25%"  stopColor="#fbbf24" />
+                    <stop offset="60%"  stopColor="#f7931a" />
+                    <stop offset="100%" stopColor="#7c2d12" />
                   </radialGradient>
-                  <radialGradient id="coinShine" cx="35%" cy="28%" r="45%">
-                    <stop offset="0%" stopColor="rgba(255,255,255,0.35)" />
-                    <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                  </radialGradient>
-                  <filter id="nodeglow">
-                    <feGaussianBlur stdDeviation="2" result="blur" />
-                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-                  <filter id="coinglow">
-                    <feGaussianBlur stdDeviation="8" result="blur" />
-                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
                 </defs>
 
-                {/* Ambient glow */}
-                <circle cx="100" cy="100" r="90" fill="url(#bgGlow)" />
+                {/* Ambient halo */}
+                <circle cx="105" cy="105" r="98" fill="url(#cc-bg)" />
 
                 {/* Network lines */}
-                <line x1="22" y1="52"  x2="72" y2="83"  stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="178" y1="38" x2="132" y2="74" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="18"  y1="148" x2="70" y2="118" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="182" y1="158" x2="134" y2="124" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="100" y1="10"  x2="100" y2="58"  stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="100" y1="142" x2="100" y2="190" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
-                <line x1="60"  y1="30"  x2="80"  y2="68"  stroke="#00D4FF" strokeWidth="0.5" opacity="0.25" />
-                <line x1="150" y1="22"  x2="122" y2="66"  stroke="#00D4FF" strokeWidth="0.5" opacity="0.25" />
+                <line x1="18"  y1="55"  x2="72"  y2="87"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+                <line x1="192" y1="42"  x2="138" y2="76"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+                <line x1="14"  y1="155" x2="70"  y2="124" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+                <line x1="196" y1="165" x2="140" y2="130" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+                <line x1="105" y1="6"   x2="105" y2="60"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+                <line x1="105" y1="150" x2="105" y2="204" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
+
+                {/* Node halos */}
+                <circle cx="18"  cy="55"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
+                <circle cx="192" cy="42"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
+                <circle cx="14"  cy="155" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
+                <circle cx="196" cy="165" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
+                <circle cx="105" cy="6"   r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
+                <circle cx="105" cy="204" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
 
                 {/* Nodes */}
-                <circle cx="22"  cy="52"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="178" cy="38"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="18"  cy="148" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="182" cy="158" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="100" cy="10"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="100" cy="190" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
-                <circle cx="60"  cy="30"  r="2.5" fill="#00D4FF" opacity="0.5" filter="url(#nodeglow)" />
-                <circle cx="150" cy="22"  r="2.5" fill="#00D4FF" opacity="0.5" filter="url(#nodeglow)" />
+                <circle cx="18"  cy="55"  r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="192" cy="42"  r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="14"  cy="155" r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="196" cy="165" r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="105" cy="6"   r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="105" cy="204" r="5" fill="#00D4FF" opacity="0.95" />
 
-                {/* Coin base glow */}
-                <circle cx="100" cy="100" r="62" fill="#f7931a" opacity="0.18" filter="url(#coinglow)" />
+                {/* Coin shadow */}
+                <circle cx="107" cy="107" r="62" fill="rgba(0,0,0,0.45)" />
 
-                {/* Coin */}
-                <circle cx="100" cy="100" r="58" fill="url(#coinGrad)" filter="url(#coinglow)" />
-                <circle cx="100" cy="100" r="58" fill="url(#coinShine)" />
-                <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(253,230,138,0.5)" strokeWidth="1.5" />
-                <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(253,230,138,0.12)" strokeWidth="1" />
+                {/* Coin body */}
+                <circle cx="105" cy="105" r="62" fill="url(#cc-coin)" />
+
+                {/* Coin rim */}
+                <circle cx="105" cy="105" r="62" fill="none" stroke="rgba(253,224,71,0.55)" strokeWidth="2.5" />
+                <circle cx="105" cy="105" r="54" fill="none" stroke="rgba(253,224,71,0.12)" strokeWidth="1.2" />
+
+                {/* Shine */}
+                <ellipse cx="86" cy="78" rx="22" ry="14" fill="rgba(255,255,255,0.20)" />
 
                 {/* Bitcoin ₿ */}
                 <text
-                  x="100" y="119"
+                  x="105"
+                  y="127"
                   textAnchor="middle"
-                  fontSize="60"
+                  fontSize="70"
                   fontWeight="900"
                   fontFamily="Arial Black, Arial, sans-serif"
-                  fill="white"
-                  opacity="0.92"
+                  fill="rgba(255,255,255,0.92)"
                 >₿</text>
               </svg>
             </div>
