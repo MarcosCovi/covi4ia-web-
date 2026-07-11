@@ -190,72 +190,56 @@ export default function CovicoinAlphaFullReport() {
             </div>
 
             {/* ── Bitcoin Coin Visual ───────────────────────────────── */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: "visible" }}>
-                <defs>
-                  <radialGradient id="cc-bg" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#f7931a" stopOpacity="0.25" />
-                    <stop offset="100%" stopColor="#f7931a" stopOpacity="0" />
-                  </radialGradient>
-                  <radialGradient id="cc-coin" cx="34%" cy="28%" r="68%">
-                    <stop offset="0%"   stopColor="#fef3c7" />
-                    <stop offset="25%"  stopColor="#fbbf24" />
-                    <stop offset="60%"  stopColor="#f7931a" />
-                    <stop offset="100%" stopColor="#7c2d12" />
-                  </radialGradient>
-                </defs>
+            <div style={{ position: "relative", width: 200, height: 200, flexShrink: 0 }}>
 
-                {/* Ambient halo */}
-                <circle cx="105" cy="105" r="98" fill="url(#cc-bg)" />
-
-                {/* Network lines */}
-                <line x1="18"  y1="55"  x2="72"  y2="87"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-                <line x1="192" y1="42"  x2="138" y2="76"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-                <line x1="14"  y1="155" x2="70"  y2="124" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-                <line x1="196" y1="165" x2="140" y2="130" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-                <line x1="105" y1="6"   x2="105" y2="60"  stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-                <line x1="105" y1="150" x2="105" y2="204" stroke="#00D4FF" strokeWidth="0.9" opacity="0.45" />
-
-                {/* Node halos */}
-                <circle cx="18"  cy="55"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-                <circle cx="192" cy="42"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-                <circle cx="14"  cy="155" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-                <circle cx="196" cy="165" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-                <circle cx="105" cy="6"   r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-                <circle cx="105" cy="204" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.25" />
-
-                {/* Nodes */}
-                <circle cx="18"  cy="55"  r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="192" cy="42"  r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="14"  cy="155" r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="196" cy="165" r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="105" cy="6"   r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="105" cy="204" r="5" fill="#00D4FF" opacity="0.95" />
-
-                {/* Coin shadow */}
-                <circle cx="107" cy="107" r="62" fill="rgba(0,0,0,0.45)" />
-
-                {/* Coin body */}
-                <circle cx="105" cy="105" r="62" fill="url(#cc-coin)" />
-
-                {/* Coin rim */}
-                <circle cx="105" cy="105" r="62" fill="none" stroke="rgba(253,224,71,0.55)" strokeWidth="2.5" />
-                <circle cx="105" cy="105" r="54" fill="none" stroke="rgba(253,224,71,0.12)" strokeWidth="1.2" />
-
-                {/* Shine */}
-                <ellipse cx="86" cy="78" rx="22" ry="14" fill="rgba(255,255,255,0.20)" />
-
-                {/* Bitcoin ₿ */}
-                <text
-                  x="105"
-                  y="127"
-                  textAnchor="middle"
-                  fontSize="70"
-                  fontWeight="900"
-                  fontFamily="Arial Black, Arial, sans-serif"
-                  fill="rgba(255,255,255,0.92)"
-                >₿</text>
+              {/* Network lines + nodes — SVG sin defs, garantizado */}
+              <svg
+                viewBox="0 0 200 200"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", overflow: "visible" }}
+              >
+                <line x1="10"  y1="45"  x2="70"  y2="80"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <line x1="190" y1="38"  x2="130" y2="74"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <line x1="8"   y1="155" x2="68"  y2="120" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <line x1="192" y1="162" x2="132" y2="126" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <line x1="100" y1="2"   x2="100" y2="60"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <line x1="100" y1="140" x2="100" y2="198" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
+                <circle cx="10"  cy="45"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="190" cy="38"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="8"   cy="155" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="192" cy="162" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="100" cy="2"   r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="100" cy="198" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
+                <circle cx="10"  cy="45"  r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="190" cy="38"  r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="8"   cy="155" r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="192" cy="162" r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="100" cy="2"   r="5" fill="#00D4FF" opacity="0.95" />
+                <circle cx="100" cy="198" r="5" fill="#00D4FF" opacity="0.95" />
               </svg>
+
+              {/* Coin — puro CSS, sin SVG gradients */}
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 128,
+                height: 128,
+                borderRadius: "50%",
+                background: "radial-gradient(circle at 33% 28%, #fef3c7 0%, #fbbf24 22%, #f7931a 52%, #92400e 100%)",
+                border: "2.5px solid rgba(253,224,71,0.6)",
+                boxShadow: "4px 5px 0 rgba(0,0,0,0.45), 0 0 50px rgba(247,147,26,0.40), 0 0 100px rgba(247,147,26,0.18)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 66,
+                color: "rgba(255,255,255,0.92)",
+                fontWeight: 900,
+                fontFamily: "'Arial Black', Arial, sans-serif",
+                userSelect: "none",
+              }}>
+                ₿
+              </div>
             </div>
 
             <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 12, padding: "20px 28px", textAlign: "right", minWidth: 180 }}>
