@@ -6,9 +6,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const serviciosDropdown = [
-  { label: 'Aprendemos',    sub: 'Formación en IA',       href: '/servicios/aprendemos',    color: '#00D4FF' },
-  { label: 'Automatizamos', sub: 'Flujos y procesos',     href: '/servicios/automatizamos', color: '#60a5fa' },
-  { label: 'Optimizamos',   sub: 'Eficiencia operativa',  href: '/servicios/optimizamos',   color: '#f59e0b' },
+  { label: 'Formación IA',            sub: 'Educación e IA aplicada',      href: '/servicios/aprendemos',    color: '#00D4FF', group: 'Aprendemos' },
+  { label: 'Ecosistema Crypto',        sub: 'Blockchain & mercados cripto', href: '/servicios/aprendemos',    color: '#f7931a', group: 'Aprendemos' },
+  { label: 'Ecosistema Supply Chain',  sub: 'Cadena de suministro',         href: '/servicios/aprendemos',    color: '#22c55e', group: 'Aprendemos' },
+  { label: 'Integración IA·Crypto·SC', sub: 'Convergencia tecnológica',     href: '/servicios/aprendemos',    color: '#a78bfa', group: 'Aprendemos' },
+  { label: 'Automatizamos',           sub: 'Flujos y procesos',             href: '/servicios/automatizamos', color: '#60a5fa', group: ''           },
+  { label: 'Optimizamos',             sub: 'Eficiencia operativa',          href: '/servicios/optimizamos',   color: '#f59e0b', group: ''           },
 ]
 
 const navLinks = [
@@ -92,7 +95,8 @@ export default function Navbar() {
                     <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-3 w-64 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
+                    <div className="absolute top-full left-0 mt-3 w-72 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
+                      {/* Ver todos */}
                       <button onClick={() => scrollTo('#servicios')}
                         className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-left">
                         <div style={{ width: 3, height: 30, borderRadius: 3, background: 'rgba(255,255,255,0.15)', flexShrink: 0 }} />
@@ -102,7 +106,27 @@ export default function Navbar() {
                         </div>
                       </button>
                       <div className="h-px bg-white/5 mx-4 my-1" />
-                      {serviciosDropdown.map(s => (
+
+                      {/* Aprendemos section */}
+                      <div className="px-4 pt-1.5 pb-0.5">
+                        <p className="text-[10px] font-bold text-white/35 uppercase tracking-[0.15em]">Aprendemos</p>
+                      </div>
+                      {serviciosDropdown.filter(s => s.group === 'Aprendemos').map(s => (
+                        <Link key={s.label} href={s.href}
+                          onClick={() => setDropdownOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2 hover:bg-white/5 transition-colors">
+                          <div style={{ width: 3, height: 28, borderRadius: 3, background: s.color, flexShrink: 0 }} />
+                          <div>
+                            <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
+                            <div className="text-xs text-brand-mid-gray">{s.sub}</div>
+                          </div>
+                        </Link>
+                      ))}
+
+                      <div className="h-px bg-white/5 mx-4 my-1.5" />
+
+                      {/* Automatizamos / Optimizamos */}
+                      {serviciosDropdown.filter(s => s.group !== 'Aprendemos').map(s => (
                         <Link key={s.href} href={s.href}
                           onClick={() => setDropdownOpen(false)}
                           className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
@@ -189,8 +213,19 @@ export default function Navbar() {
           <div className="px-4 py-4 flex flex-col gap-1">
 
             {/* Servicios */}
-            <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-1 pb-2">Servicios</p>
-            {serviciosDropdown.map(s => (
+            <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-1 pb-1">Servicios</p>
+            <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.15em] px-2 pb-1">Aprendemos</p>
+            {serviciosDropdown.filter(s => s.group === 'Aprendemos').map(s => (
+              <Link key={s.label} href={s.href} onClick={() => setOpen(false)}
+                className="flex items-center gap-3 py-2 px-2 border-b border-white/5">
+                <div style={{ width: 3, height: 24, borderRadius: 3, background: s.color, flexShrink: 0 }} />
+                <div>
+                  <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
+                  <div className="text-xs text-brand-mid-gray">{s.sub}</div>
+                </div>
+              </Link>
+            ))}
+            {serviciosDropdown.filter(s => s.group !== 'Aprendemos').map(s => (
               <Link key={s.href} href={s.href} onClick={() => setOpen(false)}
                 className="flex items-center gap-3 py-2.5 px-2 border-b border-white/5">
                 <div style={{ width: 3, height: 24, borderRadius: 3, background: s.color, flexShrink: 0 }} />
