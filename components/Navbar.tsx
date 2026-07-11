@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const serviciosDropdown = [
   { label: 'Aprendemos',    href: '/servicios/aprendemos',    color: 'text-brand-cyan'   },
@@ -21,6 +22,8 @@ export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+  const isCovicoin = pathname === '/covicoin'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -108,13 +111,15 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <button onClick={() => scrollTo('#contacto')}
-              className="px-5 py-2 rounded-lg text-sm font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors duration-200">
-              Hablemos
-            </button>
-          </div>
+          {/* Desktop CTA — oculto en /covicoin */}
+          {!isCovicoin && (
+            <div className="hidden md:block">
+              <button onClick={() => scrollTo('#contacto')}
+                className="px-5 py-2 rounded-lg text-sm font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors duration-200">
+                Hablemos
+              </button>
+            </div>
+          )}
 
           {/* Mobile hamburger */}
           <button className="md:hidden text-white p-1" onClick={() => setOpen(!open)} aria-label="Menú">
@@ -144,10 +149,12 @@ export default function Navbar() {
               className="flex items-center gap-2 py-3 px-2 text-base font-bold text-[#f7931a] border-b border-white/5">
               <span>₿</span> COVICOIN ALPHA
             </Link>
-            <button onClick={() => scrollTo('#contacto')}
-              className="mt-3 w-full py-3 rounded-lg font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors">
-              Hablemos
-            </button>
+            {!isCovicoin && (
+              <button onClick={() => scrollTo('#contacto')}
+                className="mt-3 w-full py-3 rounded-lg font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors">
+                Hablemos
+              </button>
+            )}
           </div>
         </div>
       )}
