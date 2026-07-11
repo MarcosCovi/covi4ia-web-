@@ -160,10 +160,88 @@ export default function CovicoinAlphaFullReport() {
 
   if (!data) {
     return (
-      <div style={{ ...wrap, display: "flex", alignItems: "center", justifyContent: "center", minHeight: "60vh" }}>
-        <div style={{ textAlign: "center", color: "#64748b" }}>
-          <div style={{ fontSize: 36, marginBottom: 12 }}>📊</div>
-          <div>El informe se actualiza automáticamente a las 7:00 AM.</div>
+      <div style={wrap}>
+        {/* Hero — siempre visible aunque no haya datos */}
+        <div style={{ background: "linear-gradient(180deg,#0a0e1a 0%,#060a14 100%)", borderBottom: "1px solid #1e2d45", padding: "104px 24px 56px" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
+              <div>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 3, color: "#f7931a", textTransform: "uppercase", marginBottom: 16 }}>
+                  📊 Ecosistema Blockchain · COVI4IA
+                </div>
+                <h1 style={{ fontSize: 48, fontWeight: 900, color: "#fff", margin: "0 0 12px", lineHeight: 1.05, letterSpacing: "-2px" }}>
+                  COVICOIN <span style={{ color: "#f7931a" }}>ALPHA</span>
+                </h1>
+                <p style={{ color: "#00D4FF", fontSize: 13, fontWeight: 600, letterSpacing: 3, textTransform: "uppercase", margin: 0 }}>
+                  Inteligencia de Mercado Crypto · Informe Completo
+                </p>
+              </div>
+
+              {/* Coin Visual */}
+              <div style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
+                <div style={{ width: 240, height: 240, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <svg width="240" height="240" viewBox="0 0 240 240" style={{ position: "absolute", top: 0, left: 0 }}>
+                    <line x1="120" y1="120" x2="22"  y2="46"  stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="218" y2="54"  stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="224" y2="168" stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="44"  y2="192" stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="120" y2="13"  stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="16"  y2="140" stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="232" y2="120" stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                    <line x1="22"  y1="46"  x2="218" y2="54"  stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                    <line x1="218" y1="54"  x2="224" y2="168" stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                    <line x1="224" y1="168" x2="44"  y2="192" stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                    <line x1="44"  y1="192" x2="22"  y2="46"  stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                    <circle cx="22"  cy="46"  r="4" fill="rgba(0,212,255,0.5)"/>
+                    <circle cx="218" cy="54"  r="4" fill="rgba(0,212,255,0.5)"/>
+                    <circle cx="224" cy="168" r="4" fill="rgba(0,212,255,0.5)"/>
+                    <circle cx="44"  cy="192" r="4" fill="rgba(0,212,255,0.5)"/>
+                    <circle cx="120" cy="13"  r="3" fill="rgba(0,212,255,0.4)"/>
+                    <circle cx="16"  cy="140" r="3" fill="rgba(0,212,255,0.4)"/>
+                    <circle cx="232" cy="120" r="3" fill="rgba(0,212,255,0.4)"/>
+                    <circle cx="72"  cy="80"  r="2" fill="rgba(247,147,26,0.4)"/>
+                    <circle cx="176" cy="88"  r="2" fill="rgba(247,147,26,0.4)"/>
+                    <circle cx="160" cy="184" r="2" fill="rgba(247,147,26,0.4)"/>
+                    <circle cx="64"  cy="160" r="2" fill="rgba(247,147,26,0.4)"/>
+                    <line x1="120" y1="120" x2="72"  y2="80"  stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="176" y2="88"  stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="160" y2="184" stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                    <line x1="120" y1="120" x2="64"  y2="160" stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                  </svg>
+                  <div style={{ position: "absolute", width: 160, height: 160, borderRadius: "50%", background: "radial-gradient(circle, rgba(247,147,26,0.2) 0%, rgba(247,147,26,0.05) 55%, transparent 70%)" }} />
+                  <div style={{
+                    width: 120, height: 120, borderRadius: "50%",
+                    background: "linear-gradient(145deg, #fbb040 0%, #f7931a 30%, #c47b38 60%, #e8830a 80%, #f7931a 100%)",
+                    boxShadow: "0 0 50px rgba(247,147,26,0.45), 0 0 100px rgba(247,147,26,0.15), inset 0 2px 6px rgba(255,255,255,0.25), inset 0 -2px 4px rgba(0,0,0,0.3)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    position: "relative", zIndex: 2,
+                    border: "4px solid rgba(255,200,100,0.25)",
+                  }}>
+                    <div style={{ position: "absolute", width: 98, height: 98, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.12)" }} />
+                    <span style={{ fontSize: 55, fontWeight: 900, color: "#fff", textShadow: "0 3px 10px rgba(0,0,0,0.4)", lineHeight: 1, position: "relative", zIndex: 1 }}>₿</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Info box — pending state */}
+              <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 12, padding: "20px 28px", textAlign: "right", minWidth: 180 }}>
+                <div style={{ fontSize: 10, color: "#64748b", letterSpacing: 1, marginBottom: 6 }}>PRÓXIMA ACTUALIZACIÓN</div>
+                <div style={{ fontSize: 22, fontWeight: 900, color: "#64748b" }}>07:00 AM</div>
+                <div style={{ fontSize: 11, color: "#64748b", marginTop: 6 }}>Buenos Aires</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 5, justifyContent: "flex-end", marginTop: 12 }}>
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#f59e0b", boxShadow: "0 0 8px #f59e0b" }} />
+                  <span style={{ fontSize: 10, color: "#f59e0b", fontWeight: 700 }}>PENDIENTE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Mensaje sin datos */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "80px 24px" }}>
+          <div style={{ textAlign: "center", color: "#64748b" }}>
+            <div style={{ fontSize: 36, marginBottom: 12 }}>📊</div>
+            <div style={{ fontSize: 14 }}>El informe se actualiza automáticamente a las 7:00 AM.</div>
+          </div>
         </div>
       </div>
     );
