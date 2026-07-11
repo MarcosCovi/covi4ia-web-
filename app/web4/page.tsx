@@ -1,7 +1,5 @@
 'use client'
 import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Web4Page() {
   const [format, setFormat] = useState<'16x9' | '9x16'>('16x9')
@@ -17,25 +15,6 @@ export default function Web4Page() {
         background: 'linear-gradient(180deg, #0a0e1a 0%, #060a14 100%)',
         position: 'relative',
       }}>
-
-        {/* Logo → home */}
-        <Link href="/" style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          textDecoration: 'none',
-          marginBottom: 28,
-          opacity: 0.75,
-          transition: 'opacity .2s',
-        }}
-          onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
-          onMouseLeave={e => (e.currentTarget.style.opacity = '0.75')}
-        >
-          <Image src="/lion.png" alt="COVI4IA" width={28} height={28} />
-          <span style={{ fontSize: 15, fontWeight: 900, letterSpacing: 4, color: '#fff' }}>
-            COVI<span style={{ color: '#00D4FF' }}>4</span>IA
-          </span>
-        </Link>
 
         <h1 style={{ fontSize: 40, fontWeight: 900, color: '#fff', letterSpacing: -1, margin: '0 0 10px' }}>
           WEB<span style={{ color: '#00D4FF', textShadow: '0 0 40px rgba(0,212,255,0.6)' }}>4</span>
