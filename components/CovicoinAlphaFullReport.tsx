@@ -189,56 +189,62 @@ export default function CovicoinAlphaFullReport() {
               </p>
             </div>
 
-            {/* ── Bitcoin Coin Visual ───────────────────────────────── */}
-            <div style={{ position: "relative", width: 200, height: 200, flexShrink: 0 }}>
+            {/* ── Bitcoin Coin Visual (mismo patrón que CovicoinAlphaPromo) ── */}
+            <div style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
+              <div style={{ width: 240, height: 240, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
 
-              {/* Network lines + nodes — SVG sin defs, garantizado */}
-              <svg
-                viewBox="0 0 200 200"
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", overflow: "visible" }}
-              >
-                <line x1="10"  y1="45"  x2="70"  y2="80"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <line x1="190" y1="38"  x2="130" y2="74"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <line x1="8"   y1="155" x2="68"  y2="120" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <line x1="192" y1="162" x2="132" y2="126" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <line x1="100" y1="2"   x2="100" y2="60"  stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <line x1="100" y1="140" x2="100" y2="198" stroke="#00D4FF" strokeWidth="1"   opacity="0.5" />
-                <circle cx="10"  cy="45"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="190" cy="38"  r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="8"   cy="155" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="192" cy="162" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="100" cy="2"   r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="100" cy="198" r="9" fill="none" stroke="#00D4FF" strokeWidth="1" opacity="0.3" />
-                <circle cx="10"  cy="45"  r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="190" cy="38"  r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="8"   cy="155" r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="192" cy="162" r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="100" cy="2"   r="5" fill="#00D4FF" opacity="0.95" />
-                <circle cx="100" cy="198" r="5" fill="#00D4FF" opacity="0.95" />
-              </svg>
+                {/* Network SVG — sin defs */}
+                <svg width="240" height="240" viewBox="0 0 240 240" style={{ position: "absolute", top: 0, left: 0 }}>
+                  <line x1="120" y1="120" x2="22"  y2="46"  stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="218" y2="54"  stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="224" y2="168" stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="44"  y2="192" stroke="rgba(0,212,255,0.25)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="120" y2="13"  stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="16"  y2="140" stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="232" y2="120" stroke="rgba(0,212,255,0.18)" strokeWidth="1"/>
+                  <line x1="22"  y1="46"  x2="218" y2="54"  stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                  <line x1="218" y1="54"  x2="224" y2="168" stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                  <line x1="224" y1="168" x2="44"  y2="192" stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                  <line x1="44"  y1="192" x2="22"  y2="46"  stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                  <circle cx="22"  cy="46"  r="4" fill="rgba(0,212,255,0.5)"/>
+                  <circle cx="218" cy="54"  r="4" fill="rgba(0,212,255,0.5)"/>
+                  <circle cx="224" cy="168" r="4" fill="rgba(0,212,255,0.5)"/>
+                  <circle cx="44"  cy="192" r="4" fill="rgba(0,212,255,0.5)"/>
+                  <circle cx="120" cy="13"  r="3" fill="rgba(0,212,255,0.4)"/>
+                  <circle cx="16"  cy="140" r="3" fill="rgba(0,212,255,0.4)"/>
+                  <circle cx="232" cy="120" r="3" fill="rgba(0,212,255,0.4)"/>
+                  <circle cx="72"  cy="80"  r="2" fill="rgba(247,147,26,0.4)"/>
+                  <circle cx="176" cy="88"  r="2" fill="rgba(247,147,26,0.4)"/>
+                  <circle cx="160" cy="184" r="2" fill="rgba(247,147,26,0.4)"/>
+                  <circle cx="64"  cy="160" r="2" fill="rgba(247,147,26,0.4)"/>
+                  <line x1="120" y1="120" x2="72"  y2="80"  stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="176" y2="88"  stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="160" y2="184" stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                  <line x1="120" y1="120" x2="64"  y2="160" stroke="rgba(247,147,26,0.15)" strokeWidth="1"/>
+                </svg>
 
-              {/* Coin — puro CSS, sin SVG gradients */}
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: 128,
-                height: 128,
-                borderRadius: "50%",
-                background: "radial-gradient(circle at 33% 28%, #fef3c7 0%, #fbbf24 22%, #f7931a 52%, #92400e 100%)",
-                border: "2.5px solid rgba(253,224,71,0.6)",
-                boxShadow: "4px 5px 0 rgba(0,0,0,0.45), 0 0 50px rgba(247,147,26,0.40), 0 0 100px rgba(247,147,26,0.18)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 66,
-                color: "rgba(255,255,255,0.92)",
-                fontWeight: 900,
-                fontFamily: "'Arial Black', Arial, sans-serif",
-                userSelect: "none",
-              }}>
-                ₿
+                {/* Outer glow ring */}
+                <div style={{
+                  position: "absolute",
+                  width: 160, height: 160, borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(247,147,26,0.2) 0%, rgba(247,147,26,0.05) 55%, transparent 70%)",
+                }} />
+
+                {/* Coin — mismo CSS que en Promo */}
+                <div style={{
+                  width: 120, height: 120, borderRadius: "50%",
+                  background: "linear-gradient(145deg, #fbb040 0%, #f7931a 30%, #c47b38 60%, #e8830a 80%, #f7931a 100%)",
+                  boxShadow: "0 0 50px rgba(247,147,26,0.45), 0 0 100px rgba(247,147,26,0.15), inset 0 2px 6px rgba(255,255,255,0.25), inset 0 -2px 4px rgba(0,0,0,0.3)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  position: "relative", zIndex: 2,
+                  border: "4px solid rgba(255,200,100,0.25)",
+                }}>
+                  <div style={{ position: "absolute", width: 98, height: 98, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.12)" }} />
+                  <span style={{ fontSize: 55, fontWeight: 900, color: "#fff", textShadow: "0 3px 10px rgba(0,0,0,0.4)", lineHeight: 1, position: "relative", zIndex: 1 }}>
+                    ₿
+                  </span>
+                </div>
+
               </div>
             </div>
 
