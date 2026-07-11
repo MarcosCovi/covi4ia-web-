@@ -188,6 +188,79 @@ export default function CovicoinAlphaFullReport() {
                 Inteligencia de Mercado Crypto · Informe Completo
               </p>
             </div>
+
+            {/* ── Bitcoin Coin Visual ───────────────────────────────── */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#f7931a" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#f7931a" stopOpacity="0" />
+                  </radialGradient>
+                  <radialGradient id="coinGrad" cx="38%" cy="32%" r="70%">
+                    <stop offset="0%" stopColor="#fde68a" />
+                    <stop offset="35%" stopColor="#f7931a" />
+                    <stop offset="100%" stopColor="#78350f" />
+                  </radialGradient>
+                  <radialGradient id="coinShine" cx="35%" cy="28%" r="45%">
+                    <stop offset="0%" stopColor="rgba(255,255,255,0.35)" />
+                    <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                  </radialGradient>
+                  <filter id="nodeglow">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <filter id="coinglow">
+                    <feGaussianBlur stdDeviation="8" result="blur" />
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+
+                {/* Ambient glow */}
+                <circle cx="100" cy="100" r="90" fill="url(#bgGlow)" />
+
+                {/* Network lines */}
+                <line x1="22" y1="52"  x2="72" y2="83"  stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="178" y1="38" x2="132" y2="74" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="18"  y1="148" x2="70" y2="118" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="182" y1="158" x2="134" y2="124" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="100" y1="10"  x2="100" y2="58"  stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="100" y1="142" x2="100" y2="190" stroke="#00D4FF" strokeWidth="0.7" opacity="0.45" />
+                <line x1="60"  y1="30"  x2="80"  y2="68"  stroke="#00D4FF" strokeWidth="0.5" opacity="0.25" />
+                <line x1="150" y1="22"  x2="122" y2="66"  stroke="#00D4FF" strokeWidth="0.5" opacity="0.25" />
+
+                {/* Nodes */}
+                <circle cx="22"  cy="52"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="178" cy="38"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="18"  cy="148" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="182" cy="158" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="100" cy="10"  r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="100" cy="190" r="3.5" fill="#00D4FF" opacity="0.8" filter="url(#nodeglow)" />
+                <circle cx="60"  cy="30"  r="2.5" fill="#00D4FF" opacity="0.5" filter="url(#nodeglow)" />
+                <circle cx="150" cy="22"  r="2.5" fill="#00D4FF" opacity="0.5" filter="url(#nodeglow)" />
+
+                {/* Coin base glow */}
+                <circle cx="100" cy="100" r="62" fill="#f7931a" opacity="0.18" filter="url(#coinglow)" />
+
+                {/* Coin */}
+                <circle cx="100" cy="100" r="58" fill="url(#coinGrad)" filter="url(#coinglow)" />
+                <circle cx="100" cy="100" r="58" fill="url(#coinShine)" />
+                <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(253,230,138,0.5)" strokeWidth="1.5" />
+                <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(253,230,138,0.12)" strokeWidth="1" />
+
+                {/* Bitcoin ₿ */}
+                <text
+                  x="100" y="119"
+                  textAnchor="middle"
+                  fontSize="60"
+                  fontWeight="900"
+                  fontFamily="Arial Black, Arial, sans-serif"
+                  fill="white"
+                  opacity="0.92"
+                >₿</text>
+              </svg>
+            </div>
+
             <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 12, padding: "20px 28px", textAlign: "right", minWidth: 180 }}>
               <div style={{ fontSize: 10, color: "#64748b", letterSpacing: 1, marginBottom: 6 }}>INFORME DEL DÍA</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#f7931a" }}>{data.date}</div>
