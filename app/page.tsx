@@ -1,5 +1,4 @@
 import Navbar               from '@/components/Navbar'
-import SectionNavPanel      from '@/components/SectionNavPanel'
 import Hero                 from '@/components/Hero'
 import Stats                from '@/components/Stats'
 import Services             from '@/components/Services'
@@ -17,7 +16,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <SectionNavPanel />
       <main>
         <Hero />
         <Stats />
