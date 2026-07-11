@@ -174,26 +174,26 @@ export default function CovicoinAlphaFullReport() {
   return (
     <div style={wrap}>
       {/* ── HERO HEADER ─────────────────────────────────────────── */}
-      <div style={{ background: "linear-gradient(180deg,#0a0e1a 0%,#060a14 100%)", borderBottom: "1px solid #1e2d45", padding: "48px 24px 40px" }}>
+      <div style={{ background: "linear-gradient(180deg,#0a0e1a 0%,#060a14 100%)", borderBottom: "1px solid #1e2d45", padding: "104px 24px 56px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 20 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 3, color: "#f7931a", textTransform: "uppercase", marginBottom: 10 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 3, color: "#f7931a", textTransform: "uppercase", marginBottom: 16 }}>
                 📊 Ecosistema Blockchain · COVI4IA
               </div>
-              <h1 style={{ fontSize: 42, fontWeight: 900, color: "#fff", margin: "0 0 6px", lineHeight: 1.1, letterSpacing: "-1.5px" }}>
+              <h1 style={{ fontSize: 48, fontWeight: 900, color: "#fff", margin: "0 0 12px", lineHeight: 1.05, letterSpacing: "-2px" }}>
                 COVICOIN <span style={{ color: "#f7931a" }}>ALPHA</span>
               </h1>
               <p style={{ color: "#00D4FF", fontSize: 13, fontWeight: 600, letterSpacing: 3, textTransform: "uppercase", margin: 0 }}>
                 Inteligencia de Mercado Cripto · Informe Completo
               </p>
             </div>
-            <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 10, padding: "14px 20px", textAlign: "right" }}>
-              <div style={{ fontSize: 10, color: "#64748b", letterSpacing: 1, marginBottom: 4 }}>INFORME DEL DÍA</div>
-              <div style={{ fontSize: 20, fontWeight: 900, color: "#f7931a" }}>{data.date}</div>
-              <div style={{ fontSize: 11, color: "#64748b", marginTop: 4 }}>07:00 AM · Buenos Aires</div>
-              <div style={{ display: "flex", alignItems: "center", gap: 5, justifyContent: "flex-end", marginTop: 8 }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px #22c55e" }} />
+            <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 12, padding: "20px 28px", textAlign: "right", minWidth: 180 }}>
+              <div style={{ fontSize: 10, color: "#64748b", letterSpacing: 1, marginBottom: 6 }}>INFORME DEL DÍA</div>
+              <div style={{ fontSize: 22, fontWeight: 900, color: "#f7931a" }}>{data.date}</div>
+              <div style={{ fontSize: 11, color: "#64748b", marginTop: 6 }}>07:00 AM · Buenos Aires</div>
+              <div style={{ display: "flex", alignItems: "center", gap: 5, justifyContent: "flex-end", marginTop: 12 }}>
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 8px #22c55e" }} />
                 <span style={{ fontSize: 10, color: "#22c55e", fontWeight: 700 }}>GENERADO CON IA</span>
               </div>
             </div>

@@ -69,39 +69,43 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
 
-            {/* Servicios dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex items-center gap-1 text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
-                Servicios
-                <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {dropdownOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
-                  <button onClick={() => scrollTo('#servicios')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-brand-mid-gray hover:text-white hover:bg-white/5 transition-colors">
-                    Ver todos
+            {!isCovicoin && (
+              <>
+                {/* Servicios dropdown */}
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="flex items-center gap-1 text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
+                    Servicios
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
-                  <div className="h-px bg-white/5 my-1" />
-                  {serviciosDropdown.map(s => (
-                    <Link key={s.href} href={s.href}
-                      onClick={() => setDropdownOpen(false)}
-                      className={`block px-4 py-2.5 text-sm font-semibold ${s.color} hover:bg-white/5 transition-colors`}>
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
 
-            {navLinks.map(link => (
-              <button key={link.href} onClick={() => scrollTo(link.href)}
-                className="text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
-                {link.label}
-              </button>
-            ))}
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
+                      <button onClick={() => scrollTo('#servicios')}
+                        className="w-full text-left px-4 py-2.5 text-sm text-brand-mid-gray hover:text-white hover:bg-white/5 transition-colors">
+                        Ver todos
+                      </button>
+                      <div className="h-px bg-white/5 my-1" />
+                      {serviciosDropdown.map(s => (
+                        <Link key={s.href} href={s.href}
+                          onClick={() => setDropdownOpen(false)}
+                          className={`block px-4 py-2.5 text-sm font-semibold ${s.color} hover:bg-white/5 transition-colors`}>
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {navLinks.map(link => (
+                  <button key={link.href} onClick={() => scrollTo(link.href)}
+                    className="text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
+                    {link.label}
+                  </button>
+                ))}
+              </>
+            )}
 
             {/* COVICOIN ALPHA */}
             <Link
@@ -121,15 +125,17 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* Mobile hamburger */}
-          <button className="md:hidden text-white p-1" onClick={() => setOpen(!open)} aria-label="Menú">
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Mobile hamburger — hidden on /covicoin */}
+          {!isCovicoin && (
+            <button className="md:hidden text-white p-1" onClick={() => setOpen(!open)} aria-label="Menú">
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
+      {/* Mobile menu — hidden on /covicoin */}
+      {open && !isCovicoin && (
         <div className="md:hidden bg-brand-navy-mid border-t border-white/5">
           <div className="px-4 py-4 flex flex-col gap-1">
             <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-1 pb-2">Servicios</p>
