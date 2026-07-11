@@ -107,12 +107,14 @@ export default function Navbar() {
               </>
             )}
 
-            {/* COVICOIN ALPHA */}
-            <Link
-              href="/covicoin"
-              className="flex items-center gap-1.5 text-sm font-bold text-[#f7931a] hover:text-[#fbb040] transition-colors duration-200 border border-[#f7931a]/30 rounded-lg px-3 py-1.5 hover:border-[#f7931a]/60 hover:bg-[#f7931a]/5">
-              <span style={{ fontSize: 13 }}>₿</span> COVICOIN ALPHA
-            </Link>
+            {/* COVICOIN ALPHA — solo visible fuera de /covicoin */}
+            {!isCovicoin && (
+              <Link
+                href="/covicoin"
+                className="flex items-center gap-1.5 text-sm font-bold text-[#f7931a] hover:text-[#fbb040] transition-colors duration-200 border border-[#f7931a]/30 rounded-lg px-3 py-1.5 hover:border-[#f7931a]/60 hover:bg-[#f7931a]/5">
+                <span style={{ fontSize: 13 }}>₿</span> COVICOIN ALPHA
+              </Link>
+            )}
           </nav>
 
           {/* Desktop CTA — oculto en /covicoin */}
@@ -151,10 +153,12 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <Link href="/covicoin" onClick={() => setOpen(false)}
-              className="flex items-center gap-2 py-3 px-2 text-base font-bold text-[#f7931a] border-b border-white/5">
-              <span>₿</span> COVICOIN ALPHA
-            </Link>
+            {!isCovicoin && (
+              <Link href="/covicoin" onClick={() => setOpen(false)}
+                className="flex items-center gap-2 py-3 px-2 text-base font-bold text-[#f7931a] border-b border-white/5">
+                <span>₿</span> COVICOIN ALPHA
+              </Link>
+            )}
             {!isCovicoin && (
               <button onClick={() => scrollTo('#contacto')}
                 className="mt-3 w-full py-3 rounded-lg font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors">
