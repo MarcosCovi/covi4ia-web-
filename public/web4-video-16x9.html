@@ -6,7 +6,7 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100vw;height:100vh;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center}
-#stage{width:1920px;height:1080px;position:relative;overflow:hidden;transform-origin:center center;background:linear-gradient(160deg,#060a14 0%,#08101e 50%,#060a14 100%);font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#fff}
+#stage{width:1920px;height:1080px;position:absolute;top:50%;left:50%;top:50%;left:50%;overflow:hidden;transform-origin:center center;background:linear-gradient(160deg,#060a14 0%,#08101e 50%,#060a14 100%);font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#fff}
 #bg{position:absolute;inset:0;width:1920px;height:1080px;z-index:0}
 .grid-ov{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(0,212,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.022) 1px,transparent 1px);background-size:120px 120px;pointer-events:none}
 #prog{position:absolute;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#a78bfa,#00D4FF,#f7931a);z-index:200;box-shadow:0 0 14px rgba(0,212,255,0.8)}
@@ -186,10 +186,7 @@ function scaleStage(){
   const s=document.getElementById('stage');
   const sx=window.innerWidth/1920, sy=window.innerHeight/1080;
   const sc=Math.min(sx,sy);
-  s.style.transform=`scale(${sc})`;
-  s.style.left=((window.innerWidth-1920*sc)/2)+'px';
-  s.style.top=((window.innerHeight-1080*sc)/2)+'px';
-  s.style.position='absolute';
+  s.style.transform=`translate(-50%,-50%) scale(${sc})`;
 }
 window.addEventListener('resize',scaleStage); scaleStage();
 
