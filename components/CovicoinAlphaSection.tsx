@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * COVICOIN ALPHA — Sección de inteligencia de mercado cripto para covi4ia.com
+ * COVICOIN ALPHA — Sección de inteligencia de mercado crypto para covi4ia.com
  * Integrada en app/page.tsx — actualizada automáticamente cada día a las 7:00 AM
  */
 
@@ -237,7 +237,7 @@ export default function CovicoinAlphaSection() {
               COVICOIN <span style={{ color: "#f7931a" }}>ALPHA</span>
             </h2>
             <p style={{ fontSize: 14, color: "#64748b", marginTop: 8, marginBottom: 0 }}>
-              Inteligencia de mercado cripto · Actualizado cada día a las 7:00 AM
+              Inteligencia de mercado crypto · Actualizado cada día a las 7:00 AM
             </p>
           </div>
           <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 8, padding: "10px 18px", textAlign: "right" }}>

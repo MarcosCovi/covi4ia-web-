@@ -185,7 +185,7 @@ export default function CovicoinAlphaFullReport() {
                 COVICOIN <span style={{ color: "#f7931a" }}>ALPHA</span>
               </h1>
               <p style={{ color: "#00D4FF", fontSize: 13, fontWeight: 600, letterSpacing: 3, textTransform: "uppercase", margin: 0 }}>
-                Inteligencia de Mercado Cripto · Informe Completo
+                Inteligencia de Mercado Crypto · Informe Completo
               </p>
             </div>
             <div style={{ background: "rgba(247,147,26,.1)", border: "1px solid rgba(247,147,26,.25)", borderRadius: 12, padding: "20px 28px", textAlign: "right", minWidth: 180 }}>
@@ -543,6 +543,4 @@ export default function CovicoinAlphaFullReport() {
         </div>
 
       </div>
-    </div>
-  );
-}
+    <

@@ -28,7 +28,7 @@
     "fet":  "ESPERAR",
     "gala": "REDUCIR"
   },
-  "macro_narrative": "El mercado cripto opera en fase de corrección post-ATH. Bitcoin alcanzó su máximo histórico de $126,000 el 14 de octubre de 2025 y actualmente cotiza ~50% por debajo, en $63,356. El Fear & Greed Index marca 23 (Extreme Fear) — zona históricamente favorable para acumulación progresiva. La dominancia BTC en 56.3% y el Altcoin Season Index en 47 confirman que el ciclo sigue siendo liderado por Bitcoin sin rotación masiva hacia altcoins. La Fed mantuvo tasas en 3.50–3.75% con tono hawkish, y el DXY en 101.13 genera presión lateral sobre activos de riesgo. El patrón histórico post-halving proyecta un suelo de ciclo en Q4 2026 entre $50,000–$55,000. Las ballenas acumularon 270,000 BTC ($16.7B) cerca de los $59K en las últimas 2 semanas — señal de acumulación institucional en zona de valor.",
+  "macro_narrative": "El mercado crypto opera en fase de corrección post-ATH. Bitcoin alcanzó su máximo histórico de $126,000 el 14 de octubre de 2025 y actualmente cotiza ~50% por debajo, en $63,356. El Fear & Greed Index marca 23 (Extreme Fear) — zona históricamente favorable para acumulación progresiva. La dominancia BTC en 56.3% y el Altcoin Season Index en 47 confirman que el ciclo sigue siendo liderado por Bitcoin sin rotación masiva hacia altcoins. La Fed mantuvo tasas en 3.50–3.75% con tono hawkish, y el DXY en 101.13 genera presión lateral sobre activos de riesgo. El patrón histórico post-halving proyecta un suelo de ciclo en Q4 2026 entre $50,000–$55,000. Las ballenas acumularon 270,000 BTC ($16.7B) cerca de los $59K en las últimas 2 semanas — señal de acumulación institucional en zona de valor.",
   "portfolio_analysis": [
     {
       "asset": "btc",
@@ -100,7 +100,7 @@
       "support": "0.0110",
       "resistance": "0.0185",
       "change_24h": -1.4,
-      "analysis": "Gaming cripto en sub-ciclo bajista prolongado. Sin catalizador de juego AAA concreto. En mercado con F&G en Extreme Fear, los activos de gaming son los más penalizados. Considerar reducción de exposición y rotación hacia TAO u ONDO."
+      "analysis": "Gaming crypto en sub-ciclo bajista prolongado. Sin catalizador de juego AAA concreto. En mercado con F&G en Extreme Fear, los activos de gaming son los más penalizados. Considerar reducción de exposición y rotación hacia TAO u ONDO."
     }
   ],
   "top_news": [
@@ -114,7 +114,7 @@
     },
     {
       "asset": "TAO",
-      "text": "Grayscale ETF filing para Bittensor avanza: S-1 enmendado en abril 2026 en revisión de la SEC. TAO +47% YTD lidera el sector IA cripto. THORChain integró TAO post-reactivación de red (junio 2026)."
+      "text": "Grayscale ETF filing para Bittensor avanza: S-1 enmendado en abril 2026 en revisión de la SEC. TAO +47% YTD lidera el sector IA crypto. THORChain integró TAO post-reactivación de red (junio 2026)."
     },
     {
       "asset": "ETH",
@@ -159,78 +159,4 @@
     {
       "asset": "BTC",
       "narrative": "Acumulación de ciclo — Mejor relación riesgo/recompensa a 12 meses",
-      "reason": "El F&G en Extreme Fear (<25) históricamente genera retornos promedio de +180% en 12 meses en los últimos 3 ciclos. Las ballenas acumulan activamente en la zona actual. DCA en escalera desde $65K a $55K ofrece el mejor riesgo/recompensa del portfolio en perspectiva anual.",
-      "target": "$95,000"
-    }
-  ],
-  "defi_yields": [
-    { "protocol": "Sky (Maker)",  "asset": "USDS",    "chain": "Ethereum", "apy": 8.5,  "tvl": "$6.2B",  "risk": "Bajo" },
-    { "protocol": "Morpho Blue", "asset": "USDC",     "chain": "Ethereum", "apy": 6.8,  "tvl": "$4.8B",  "risk": "Bajo" },
-    { "protocol": "Jito",        "asset": "jitoSOL",  "chain": "Solana",   "apy": 7.2,  "tvl": "$1.8B",  "risk": "Bajo" },
-    { "protocol": "Aave V3",     "asset": "USDC",     "chain": "Ethereum", "apy": 5.2,  "tvl": "$15.2B", "risk": "Muy Bajo" },
-    { "protocol": "EigenLayer",  "asset": "ETH",      "chain": "Ethereum", "apy": 5.1,  "tvl": "$10B",   "risk": "Medio" },
-    { "protocol": "Lido",        "asset": "stETH",    "chain": "Ethereum", "apy": 3.8,  "tvl": "$20B",   "risk": "Muy Bajo" }
-  ],
-  "altcoin_narrative": "Altcoin Season Index en 47 — Bitcoin Season. Menos del 50% de los top 100 activos superaron a BTC en los últimos 90 días. El F&G en Extreme Fear (23) confirma que el mercado no está listo para rotación masiva hacia altcoins. El Altcoin Season estructural requiere F&G > 60 + Altcoin Index > 75. La estrategia correcta: concentrar en BTC + activos con narrativas concretas (TAO, ONDO). Evitar altcoins sin fundamentales. El próximo Altcoin Season podría comenzar en Q1 2027 si BTC hace suelo en Q4 2026.",
-  "whale_movements": [
-    {
-      "asset": "BTC",
-      "amount": "$16.7B (270K BTC)",
-      "type": "Acumulación",
-      "from": "Exchanges",
-      "to": "Cold Wallets",
-      "impact": "Bullish",
-      "time": "Últimas 2 semanas",
-      "note": "Mayor acumulación de ballenas en 2026. Concentrada en zona $58–$62K. Patrón histórico de suelo de ciclo."
-    },
-    {
-      "asset": "BTC",
-      "amount": "49,000 BTC",
-      "type": "Exchange Inflow",
-      "from": "Cold Wallets",
-      "to": "Exchanges",
-      "impact": "Neutral",
-      "time": "30-Jun",
-      "note": "Spike catalogado por CryptoQuant como 'rare extreme'. Depósito promedio de 1 BTC a 2 BTC: reposicionamiento institucional, no pánico retail."
-    },
-    {
-      "asset": "ETH",
-      "amount": "4,695 ETH → 133.8 BTC",
-      "type": "Swap ETH→BTC",
-      "from": "Wallet 0x...a41f",
-      "to": "Wallet BTC",
-      "impact": "Bearish",
-      "time": "5-Jul",
-      "note": "Tercera operación ETH→BTC del año del mismo whale. Señal bearish sistemática sobre el ratio ETH/BTC."
-    },
-    {
-      "asset": "BTC",
-      "amount": "$1.2B+",
-      "type": "Large Transactions",
-      "from": "Multiple Wallets",
-      "to": "Multiple Wallets",
-      "impact": "Bullish",
-      "time": "10-Jul",
-      "note": "10,095 transacciones >$100K en 24h — máximo de 6 semanas en actividad de grandes carteras on-chain."
-    },
-    {
-      "asset": "TAO",
-      "amount": "Flujos OTC institucionales",
-      "type": "Acumulación",
-      "from": "OTC Desks",
-      "to": "Nuevos Wallets",
-      "impact": "Bullish",
-      "time": "Última semana",
-      "note": "Flujos institucionales hacia TAO ante expectativa de ETF Grayscale. +47% YTD vs -50% BTC desde ATH."
-    }
-  ],
-  "conclusions": [
-    "EXTREME FEAR (23/100) — Zona históricamente óptima para DCA en BTC. El F&G < 25 ha precedido retornos de +180% a 12 meses en los últimos 3 ciclos. Suelo proyectado Q4 2026 entre $50K–$55K. Escalonar compras: $65K → $60K → $55K.",
-    "TAO y ONDO son las mejores apuestas del portfolio. TAO: narrativa IA líder + ETF Grayscale en proceso. ONDO: RWA con respaldo SEC + BlackRock + DTCC. Ambos tienen catalizadores concretos y fundamentales diferenciados.",
-    "ETH: no agregar en el corto plazo. Ratio ETH/BTC en mínimos históricos con ballenas rotando activamente hacia BTC. Aguardar catalizador del ETF staking o vuelta a $2,000+ con volumen.",
-    "DeFi en stablecoins: estrategia óptima en mercado bajista. Sky/USDS al 8.5% APY o Morpho USDC al 6.8% para el 35–40% del portfolio en stablecoins. Riesgo bajo, rendimiento superior a treasuries.",
-    "GALA: considerar reducción y rotación hacia TAO. El gaming cripto no tiene catalizador estructural en 2026. El capital rinde más en narrativas con adopción real y flujos institucionales."
-  ],
-  "daily_recommendation": "Mercado en Extreme Fear (23/100). Estrategia: defensiva y selectiva. Mantener 35–40% en stablecoins con yield (Sky 8.5% / Morpho 6.8%). DCA gradual en BTC ($63K actual, escalar a $60K y $55K si continúa la corrección). Acumular TAO y ONDO en zona actual con sizing 3–5% cada uno. Evitar GALA y reducir exposición a FET. El suelo de ciclo se proyecta en Q4 2026 — el que acumule en esta zona tendrá el mayor upside en el próximo bull run de 2027.",
-  "report_file": "covicoin-alpha-report-2026-07-10.html"
-}
+      "reason": "El F&G en Extreme Fear (<25) históricamente genera retornos promedio de +180% en 12 meses en los últimos 3 ciclos. Las ballenas acumulan activamente en la zona actu

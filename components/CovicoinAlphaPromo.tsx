@@ -185,7 +185,7 @@ export default function CovicoinAlphaPromo() {
           </h2>
 
           <p style={{ color: "#00D4FF", fontSize: 13, fontWeight: 700, letterSpacing: 3, textTransform: "uppercase", margin: "0 0 20px" }}>
-            Inteligencia de Mercado Cripto
+            Inteligencia de Mercado Crypto
           </p>
 
           <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 16, lineHeight: 1.75, margin: "0 0 28px", maxWidth: 490 }}>

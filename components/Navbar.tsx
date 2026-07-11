@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 
 const serviciosDropdown = [
   { label: 'Formación IA',            sub: 'Educación e IA aplicada',      href: '/servicios/aprendemos',    color: '#00D4FF', group: 'Aprendemos' },
-  { label: 'Ecosistema Crypto',        sub: 'Blockchain & mercados cripto', href: '/servicios/aprendemos',    color: '#f7931a', group: 'Aprendemos' },
+  { label: 'Ecosistema Crypto',        sub: 'Blockchain & mercados crypto', href: '/servicios/aprendemos',    color: '#f7931a', group: 'Aprendemos' },
   { label: 'Ecosistema Supply Chain',  sub: 'Cadena de suministro',         href: '/servicios/aprendemos',    color: '#22c55e', group: 'Aprendemos' },
   { label: 'Integración IA·Crypto·SC', sub: 'Convergencia tecnológica',     href: '/servicios/aprendemos',    color: '#a78bfa', group: 'Aprendemos' },
   { label: 'Automatizamos',           sub: 'Flujos y procesos',             href: '/servicios/automatizamos', color: '#60a5fa', group: ''           },
@@ -22,9 +22,9 @@ const navLinks = [
 
 const explorarLinks = [
   { label: 'Noticias IA',     sub: 'Inteligencia artificial', color: '#6366f1', href: '#noticias-ia',     isRoute: false },
-  { label: 'Noticias Cripto', sub: 'Blockchain & tokens',     color: '#f7931a', href: '#noticias-cripto', isRoute: false },
+  { label: 'Noticias Crypto', sub: 'Blockchain & tokens',     color: '#f7931a', href: '#noticias-crypto', isRoute: false },
   { label: 'Noticias SC',     sub: 'Supply Chain',            color: '#22c55e', href: '#noticias-sc',     isRoute: false },
-  { label: 'COVICOIN ALPHA',  sub: 'Informe diario cripto',   color: '#00D4FF', href: '/covicoin',        isRoute: true  },
+  { label: 'COVICOIN ALPHA',  sub: 'Informe diario crypto',   color: '#00D4FF', href: '/covicoin',        isRoute: true  },
   { label: 'Trading IA Bots', sub: 'Automatización',          color: '#a78bfa', href: '#trading-bots',    isRoute: false },
   { label: 'Ebooks',          sub: 'Recursos descargables',   color: '#fb923c', href: '#ebooks',          isRoute: false },
 ]
@@ -121,160 +121,4 @@ export default function Navbar() {
                             <div className="text-xs text-brand-mid-gray">{s.sub}</div>
                           </div>
                         </Link>
-                      ))}
-
-                      <div className="h-px bg-white/5 mx-4 my-1.5" />
-
-                      {/* Automatizamos / Optimizamos */}
-                      {serviciosDropdown.filter(s => s.group !== 'Aprendemos').map(s => (
-                        <Link key={s.href} href={s.href}
-                          onClick={() => setDropdownOpen(false)}
-                          className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
-                          <div style={{ width: 3, height: 30, borderRadius: 3, background: s.color, flexShrink: 0 }} />
-                          <div>
-                            <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
-                            <div className="text-xs text-brand-mid-gray">{s.sub}</div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Nav links: Nosotros / Para quién / Contacto */}
-                {navLinks.map(link => (
-                  <button key={link.href} onClick={() => scrollTo(link.href)}
-                    className="text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
-                    {link.label}
-                  </button>
-                ))}
-
-                {/* Explorar dropdown */}
-                <div className="relative" ref={explorarRef}>
-                  <button
-                    onClick={() => setExplorarOpen(!explorarOpen)}
-                    className="flex items-center gap-1 text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
-                    Explorar
-                    <ChevronDown size={14} className={`transition-transform duration-200 ${explorarOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  {explorarOpen && (
-                    <div className="absolute top-full right-0 mt-3 w-64 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
-                      {explorarLinks.map(item =>
-                        item.isRoute ? (
-                          <Link key={item.href} href={item.href}
-                            onClick={() => setExplorarOpen(false)}
-                            className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
-                            <div style={{ width: 3, height: 30, borderRadius: 3, background: item.color, flexShrink: 0 }} />
-                            <div>
-                              <div className="text-sm font-bold" style={{ color: item.color }}>{item.label}</div>
-                              <div className="text-xs text-brand-mid-gray">{item.sub}</div>
-                            </div>
-                          </Link>
-                        ) : (
-                          <button key={item.href} onClick={() => scrollTo(item.href)}
-                            className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-left">
-                            <div style={{ width: 3, height: 30, borderRadius: 3, background: item.color, flexShrink: 0 }} />
-                            <div>
-                              <div className="text-sm font-semibold text-white/80">{item.label}</div>
-                              <div className="text-xs text-brand-mid-gray">{item.sub}</div>
-                            </div>
-                          </button>
-                        )
-                      )}
-                    </div>
-                  )}
-                </div>
-              </>
-            )}
-          </nav>
-
-          {/* Desktop CTA — oculto en /covicoin */}
-          {!isCovicoin && (
-            <div className="hidden md:block">
-              <button onClick={() => scrollTo('#contacto')}
-                className="px-5 py-2 rounded-lg text-sm font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors duration-200">
-                Hablemos
-              </button>
-            </div>
-          )}
-
-          {/* Mobile hamburger — oculto en /covicoin */}
-          {!isCovicoin && (
-            <button className="md:hidden text-white p-1" onClick={() => setOpen(!open)} aria-label="Menú">
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Mobile menu — oculto en /covicoin */}
-      {open && !isCovicoin && (
-        <div className="md:hidden bg-brand-navy-mid border-t border-white/5">
-          <div className="px-4 py-4 flex flex-col gap-1">
-
-            {/* Servicios */}
-            <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-1 pb-1">Servicios</p>
-            <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.15em] px-2 pb-1">Aprendemos</p>
-            {serviciosDropdown.filter(s => s.group === 'Aprendemos').map(s => (
-              <Link key={s.label} href={s.href} onClick={() => setOpen(false)}
-                className="flex items-center gap-3 py-2 px-2 border-b border-white/5">
-                <div style={{ width: 3, height: 24, borderRadius: 3, background: s.color, flexShrink: 0 }} />
-                <div>
-                  <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
-                  <div className="text-xs text-brand-mid-gray">{s.sub}</div>
-                </div>
-              </Link>
-            ))}
-            {serviciosDropdown.filter(s => s.group !== 'Aprendemos').map(s => (
-              <Link key={s.href} href={s.href} onClick={() => setOpen(false)}
-                className="flex items-center gap-3 py-2.5 px-2 border-b border-white/5">
-                <div style={{ width: 3, height: 24, borderRadius: 3, background: s.color, flexShrink: 0 }} />
-                <div>
-                  <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
-                  <div className="text-xs text-brand-mid-gray">{s.sub}</div>
-                </div>
-              </Link>
-            ))}
-
-            {/* Nav links */}
-            {navLinks.map(link => (
-              <button key={link.href} onClick={() => scrollTo(link.href)}
-                className="text-left py-3 px-2 text-base text-brand-mid-gray hover:text-white transition-colors border-b border-white/5">
-                {link.label}
-              </button>
-            ))}
-
-            {/* Explorar */}
-            <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-3 pb-2">Explorar</p>
-            {explorarLinks.map(item =>
-              item.isRoute ? (
-                <Link key={item.href} href={item.href} onClick={() => setOpen(false)}
-                  className="flex items-center gap-3 py-2.5 px-2 border-b border-white/5">
-                  <div style={{ width: 3, height: 24, borderRadius: 3, background: item.color, flexShrink: 0 }} />
-                  <div>
-                    <div className="text-sm font-bold" style={{ color: item.color }}>{item.label}</div>
-                    <div className="text-xs text-brand-mid-gray">{item.sub}</div>
-                  </div>
-                </Link>
-              ) : (
-                <button key={item.href} onClick={() => scrollTo(item.href)}
-                  className="flex items-center gap-3 text-left py-2.5 px-2 border-b border-white/5 w-full">
-                  <div style={{ width: 3, height: 24, borderRadius: 3, background: item.color, flexShrink: 0 }} />
-                  <div>
-                    <div className="text-sm font-semibold text-white/80">{item.label}</div>
-                    <div className="text-xs text-brand-mid-gray">{item.sub}</div>
-                  </div>
-                </button>
-              )
-            )}
-
-            <button onClick={() => scrollTo('#contacto')}
-              className="mt-3 w-full py-3 rounded-lg font-semibold bg-brand-cyan text-brand-navy hover:bg-brand-cyan-dark transition-colors">
-              Hablemos
-            </button>
-          </div>
-        </div>
-      )}
-    </header>
-  )
-}
+ 
