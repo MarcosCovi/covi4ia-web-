@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const serviciosDropdown = [
-  { label: 'Aprendemos',    href: '/servicios/aprendemos',    color: 'text-brand-cyan'   },
-  { label: 'Automatizamos', href: '/servicios/automatizamos', color: 'text-blue-400'     },
-  { label: 'Optimizamos',   href: '/servicios/optimizamos',   color: 'text-brand-copper' },
+  { label: 'Aprendemos',    sub: 'Formación en IA',       href: '/servicios/aprendemos',    color: '#00D4FF' },
+  { label: 'Automatizamos', sub: 'Flujos y procesos',     href: '/servicios/automatizamos', color: '#60a5fa' },
+  { label: 'Optimizamos',   sub: 'Eficiencia operativa',  href: '/servicios/optimizamos',   color: '#f59e0b' },
 ]
 
 const navLinks = [
@@ -92,17 +92,25 @@ export default function Navbar() {
                     <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
+                    <div className="absolute top-full left-0 mt-3 w-64 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
                       <button onClick={() => scrollTo('#servicios')}
-                        className="w-full text-left px-4 py-2.5 text-sm text-brand-mid-gray hover:text-white hover:bg-white/5 transition-colors">
-                        Ver todos
+                        className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-left">
+                        <div style={{ width: 3, height: 30, borderRadius: 3, background: 'rgba(255,255,255,0.15)', flexShrink: 0 }} />
+                        <div>
+                          <div className="text-sm font-semibold text-white/60">Ver todos</div>
+                          <div className="text-xs text-brand-mid-gray">Todos los servicios</div>
+                        </div>
                       </button>
-                      <div className="h-px bg-white/5 my-1" />
+                      <div className="h-px bg-white/5 mx-4 my-1" />
                       {serviciosDropdown.map(s => (
                         <Link key={s.href} href={s.href}
                           onClick={() => setDropdownOpen(false)}
-                          className={`block px-4 py-2.5 text-sm font-semibold ${s.color} hover:bg-white/5 transition-colors`}>
-                          {s.label}
+                          className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
+                          <div style={{ width: 3, height: 30, borderRadius: 3, background: s.color, flexShrink: 0 }} />
+                          <div>
+                            <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
+                            <div className="text-xs text-brand-mid-gray">{s.sub}</div>
+                          </div>
                         </Link>
                       ))}
                     </div>
@@ -184,8 +192,12 @@ export default function Navbar() {
             <p className="text-xs font-semibold text-brand-mid-gray uppercase tracking-widest px-2 pt-1 pb-2">Servicios</p>
             {serviciosDropdown.map(s => (
               <Link key={s.href} href={s.href} onClick={() => setOpen(false)}
-                className={`py-2.5 px-2 text-sm font-semibold ${s.color} border-b border-white/5`}>
-                → {s.label}
+                className="flex items-center gap-3 py-2.5 px-2 border-b border-white/5">
+                <div style={{ width: 3, height: 24, borderRadius: 3, background: s.color, flexShrink: 0 }} />
+                <div>
+                  <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
+                  <div className="text-xs text-brand-mid-gray">{s.sub}</div>
+                </div>
               </Link>
             ))}
 
