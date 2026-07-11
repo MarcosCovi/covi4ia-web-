@@ -25,6 +25,7 @@ const explorarLinks = [
   { label: 'Noticias Crypto', sub: 'Blockchain & tokens',     color: '#f7931a', href: '#noticias-crypto', isRoute: false },
   { label: 'Noticias SC',     sub: 'Supply Chain',            color: '#22c55e', href: '#noticias-sc',     isRoute: false },
   { label: 'COVICOIN ALPHA',  sub: 'Informe diario crypto',   color: '#00D4FF', href: '/covicoin',        isRoute: true  },
+  { label: 'WEB4',             sub: 'El Nuevo Paradigma',      color: '#a78bfa', href: '/web4',            isRoute: true  },
   { label: 'Trading IA Bots', sub: 'Automatización',          color: '#a78bfa', href: '#trading-bots',    isRoute: false },
   { label: 'Ebooks',          sub: 'Recursos descargables',   color: '#fb923c', href: '#ebooks',          isRoute: false },
 ]

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Web4 — El Nuevo Paradigma | COVI4IA</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100vw;height:100vh;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:relative;overflow:hidden;transform-origin:center center;background:linear-gradient(160deg,#060a14 0%,#08101e 50%,#060a14 100%);font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#fff}
+#bg{position:absolute;inset:0;width:1920px;height:1080px;z-index:0}
+.grid-ov{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(0,212,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.022) 1px,transparent 1px);background-size:120px 120px;pointer-events:none}
+#prog{position:absolute;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#a78bfa,#00D4FF,#f7931a);z-index:200;box-shadow:0 0 14px rgba(0,212,255,0.8)}
+#hint{position:absolute;bottom:14px;right:28px;font-size:11px;color:#1e2d45;letter-spacing:2px;z-index:200;cursor:pointer;transition:color .3s}
+#hint:hover{color:#64748b}
+.sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;opacity:0;transition:opacity .75s ease-in-out;padding:80px;pointer-events:none}
+.sc.on{opacity:1;pointer-events:auto}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideD{from{opacity:0;transform:translateY(-35px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideU{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+
+/* ══════════════════ SCENE 1 ══════════════════ */
+.s1-brand{display:flex;align-items:center;gap:20px;margin-bottom:48px;animation:slideD .7s .3s both}
+.s1-lion{font-size:42px;filter:drop-shadow(0 0 14px rgba(0,212,255,.7))}
+.s1-bname{font-size:32px;font-weight:900;letter-spacing:5px}
+.s1-bname b{color:#00D4FF}
+.s1-tag{font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#475569;margin-bottom:56px;animation:slideD .7s .6s both}
+.s1-sep{height:1px;width:1200px;background:linear-gradient(90deg,transparent,#a78bfa 20%,#00D4FF 50%,#f7931a 80%,transparent);margin-bottom:56px;transform-origin:left center;animation:growX 1.2s .9s both}
+.s1-title{font-size:210px;font-weight:900;letter-spacing:-10px;line-height:.9;text-align:center;animation:slideU 1s 1.4s both}
+.s1-title .cy{color:#00D4FF;text-shadow:0 0 70px rgba(0,212,255,.9),0 0 160px rgba(0,212,255,.4)}
+.s1-sub{font-size:30px;letter-spacing:14px;text-transform:uppercase;color:#64748b;margin-top:28px;animation:slideU .7s 2.2s both}
+.s1-formula{font-size:18px;color:#334155;letter-spacing:1px;margin-top:30px;animation:fadeIn .7s 3s both}
+.s1-formula em{color:#00D4FF;font-style:normal}
+
+/* ══════════════════ SCENE 2 ══════════════════ */
+.s2-head{font-size:16px;letter-spacing:8px;text-transform:uppercase;color:#00D4FF;margin-bottom:100px;animation:fadeIn .7s .3s both}
+.s2-track{width:1680px;position:relative}
+.s2-nodes{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
+.s2-rail{position:absolute;top:13px;left:14px;right:14px;height:2px;background:rgba(255,255,255,.05);z-index:1}
+.s2-fill{position:absolute;top:13px;left:14px;width:0;height:2px;background:linear-gradient(90deg,#a78bfa,#00D4FF 50%,#f7931a);box-shadow:0 0 12px rgba(0,212,255,.6);z-index:1;transition:width 2.8s cubic-bezier(.4,0,.2,1)}
+.s2-node{display:flex;flex-direction:column;align-items:center;gap:16px}
+.s2-dot{width:28px;height:28px;border-radius:50%;background:#0a1020;border:2px solid #1e2d45;transition:all .5s}
+.s2-node.lit .s2-dot{background:#00D4FF;border-color:#00D4FF;box-shadow:0 0 20px rgba(0,212,255,.9)}
+.s2-node.last .s2-dot{background:#f7931a;border-color:#f7931a;box-shadow:0 0 24px rgba(247,147,26,.9);width:36px;height:36px}
+.s2-year{font-size:15px;font-weight:700;color:#1e2d45;white-space:nowrap;transition:color .5s}
+.s2-node.lit .s2-year{color:#00D4FF}
+.s2-node.last .s2-year{color:#f7931a;font-size:20px}
+.s2-label{font-size:12px;color:#1e2d45;text-align:center;transition:color .5s;white-space:nowrap;line-height:1.5}
+.s2-node.lit .s2-label{color:#475569}
+.s2-node.last .s2-label{color:#f7931a;font-weight:700;font-size:14px}
+
+/* ══════════════════ SCENE 3 ══════════════════ */
+.s3-head{font-size:16px;letter-spacing:8px;text-transform:uppercase;color:#334155;margin-bottom:60px;animation:fadeIn .7s .3s both}
+.s3-row{display:flex;align-items:stretch;gap:16px}
+.s3-arrow{font-size:40px;color:rgba(255,255,255,.07);align-self:center;opacity:0;transition:opacity .6s;flex-shrink:0}
+.s3-arrow.show{opacity:1}
+.s3-card{width:350px;padding:44px 38px;border-radius:20px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.015);opacity:0;transform:translateY(40px);transition:opacity .65s,transform .65s}
+.s3-card.show{opacity:1;transform:translateY(0)}
+.s3-gen{font-size:10px;font-weight:800;letter-spacing:5px;text-transform:uppercase;color:#1e2d45;margin-bottom:16px}
+.s3-webnum{font-size:80px;font-weight:900;line-height:1;margin-bottom:16px}
+.s3-eq{font-size:20px;font-weight:700;color:#475569;margin-bottom:12px}
+.s3-desc{font-size:15px;color:#334155;line-height:1.7}
+.s3-card.w4{border-color:rgba(247,147,26,.35)!important;background:rgba(247,147,26,.04)!important;box-shadow:0 0 60px rgba(247,147,26,.08)}
+.s3-card.w4 .s3-eq{color:#f7931a}
+.s3-card.w4 .s3-desc{color:#94a3b8}
+
+/* ══════════════════ SCENE 4 ══════════════════ */
+.s4-head{font-size:50px;font-weight:900;letter-spacing:-1px;text-align:center;margin-bottom:60px;animation:slideD .7s .3s both}
+.s4-head span{color:#00D4FF}
+.s4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;width:1680px}
+.s4-card{padding:44px 34px;border-radius:20px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.015);opacity:0;transform:translateY(50px);transition:opacity .7s,transform .7s}
+.s4-card.show{opacity:1;transform:translateY(0)}
+.s4-icon{font-size:54px;margin-bottom:24px;display:block}
+.s4-sector{font-size:11px;font-weight:800;letter-spacing:5px;text-transform:uppercase;margin-bottom:14px}
+.s4-main{font-size:26px;font-weight:800;color:#fff;margin-bottom:14px;line-height:1.2}
+.s4-desc{font-size:15px;color:#475569;line-height:1.8}
+
+/* ══════════════════ SCENE 5 ══════════════════ */
+.s5-eyebrow{font-size:14px;letter-spacing:10px;text-transform:uppercase;color:#334155;margin-bottom:48px;animation:fadeIn .7s .2s both}
+.s5-l1{font-size:104px;font-weight:900;letter-spacing:-4px;color:#64748b;text-align:center;line-height:1;animation:slideU .9s .6s both}
+.s5-l2{font-size:104px;font-weight:900;letter-spacing:-4px;color:#fff;text-align:center;line-height:1;margin-bottom:20px;animation:slideU .9s 1.3s both}
+.s5-big{font-size:140px;font-weight:900;letter-spacing:-5px;text-align:center;line-height:1;background:linear-gradient(135deg,#00D4FF 0%,#a78bfa 45%,#f7931a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:slideU 1s 2.2s both}
+.s5-subs{display:flex;gap:70px;margin-top:50px;animation:fadeIn .9s 3.4s both}
+.s5-sub{text-align:center;max-width:300px}
+.s5-sub strong{display:block;font-size:11px;font-weight:800;letter-spacing:5px;text-transform:uppercase;color:#475569;margin-bottom:10px}
+.s5-sub p{font-size:16px;color:#334155;line-height:1.7}
+
+/* ══════════════════ SCENE 6 ══════════════════ */
+.s6-l0{font-size:22px;color:#334155;letter-spacing:2px;text-align:center;max-width:1100px;line-height:1.65;animation:slideD .8s .4s both;margin-bottom:52px}
+.s6-l1{font-size:60px;font-weight:300;font-style:italic;color:#475569;text-align:center;letter-spacing:2px;animation:slideU .8s 1s both;margin-bottom:20px}
+.s6-l2{font-size:120px;font-weight:900;letter-spacing:-4px;text-align:center;color:#fff;line-height:1;animation:slideU 1s 1.8s both;margin-bottom:70px;text-shadow:0 0 100px rgba(0,212,255,.3),0 0 200px rgba(0,212,255,.1)}
+.s6-divider{width:500px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.4),transparent);animation:fadeIn .7s 2.8s both;margin-bottom:36px}
+.s6-brand{display:flex;flex-direction:column;align-items:center;gap:14px;animation:fadeIn .9s 3.2s both}
+.s6-logo{font-size:44px;font-weight:900;letter-spacing:8px}
+.s6-logo b{color:#00D4FF}
+.s6-url{font-size:22px;color:#00D4FF;letter-spacing:4px}
+.s6-slogan{font-size:11px;letter-spacing:7px;text-transform:uppercase;color:#1e2d45;margin-top:4px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg"></canvas>
+  <div class="grid-ov"></div>
+  <div id="prog"></div>
+  <div id="hint" onclick="doRestart()">▶ ESPACIO · CLIC PARA REINICIAR</div>
+
+  <!-- ── S1: INTRO ── -->
+  <div class="sc on" id="s1">
+    <div class="s1-brand">
+      
+      <span class="s1-bname">COVI<b>4</b>IA</span>
+    </div>
+    <div class="s1-tag">Engineering the Web4 Enterprise</div>
+    <div class="s1-sep"></div>
+    <div class="s1-title">WEB<span class="cy">4</span></div>
+    <div class="s1-sub">El Nuevo Paradigma</div>
+    <div class="s1-formula">
+      Web3 &nbsp;+&nbsp; <em>Inteligencia Artificial</em> &nbsp;+&nbsp; Blockchain &nbsp;+&nbsp; Biotecnología &nbsp;+&nbsp; Interfaces Físicas
+    </div>
+  </div>
+
+  <!-- ── S2: TIMELINE ── -->
+  <div class="sc" id="s2">
+    <div class="s2-head">La evolución de la humanidad</div>
+    <div class="s2-track">
+      <div class="s2-rail"></div>
+      <div class="s2-fill" id="s2fill"></div>
+      <div class="s2-nodes" id="s2nodes"></div>
+    </div>
+  </div>
+
+  <!-- ── S3: WEB PROGRESSION ── -->
+  <div class="sc" id="s3">
+    <div class="s3-head">La evolución de la web</div>
+    <div class="s3-row" id="s3row"></div>
+  </div>
+
+  <!-- ── S4: IMPACTO ── -->
+  <div class="sc" id="s4">
+    <div class="s4-head">¿Qué nos trae la <span>Web4</span>?</div>
+    <div class="s4-grid" id="s4grid"></div>
+  </div>
+
+  <!-- ── S5: ERA EXPONENCIAL ── -->
+  <div class="sc" id="s5">
+    <div class="s5-eyebrow">La era exponencial</div>
+    <div class="s5-l1">no es una teoría.</div>
+    <div class="s5-l2">Es un hecho.</div>
+    <div class="s5-big">ES UN HECHO.</div>
+    <div class="s5-subs">
+      <div class="s5-sub">
+        <strong>El ritmo</strong>
+        <p>Cada innovación impulsa a la siguiente. Lo que antes llevaba siglos, ahora sucede en meses.</p>
+      </div>
+      <div class="s5-sub">
+        <strong>Nosotros</strong>
+        <p>Ya no somos solo usuarios. Somos pioneros. Somos constructores de esta nueva etapa.</p>
+      </div>
+      <div class="s5-sub">
+        <strong>El momento</strong>
+        <p>Quienes hoy entienden Web3 serán los que mañana trabajen, inviertan y vivan en la Web4.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── S6: CIERRE ── -->
+  <div class="sc" id="s6">
+    <div class="s6-l0">La Web4 será consciente, autónoma y transparente.</div>
+    <div class="s6-l1">No vas a navegarla...</div>
+    <div class="s6-l2">VAS A VIVIR EN ELLA.</div>
+    <div class="s6-divider"></div>
+    <div class="s6-brand">
+      <div class="s6-logo">COVI<b>4</b>IA</div>
+      <div class="s6-url">www.covi4ia.com</div>
+      <div class="s6-slogan">Engineering the Web4 Enterprise</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Stage scaling ─────────────────────────────────────────────────────────────
+function scaleStage(){
+  const s=document.getElementById('stage');
+  const sx=window.innerWidth/1920, sy=window.innerHeight/1080;
+  const sc=Math.min(sx,sy);
+  s.style.transform=`scale(${sc})`;
+  s.style.left=((window.innerWidth-1920*sc)/2)+'px';
+  s.style.top=((window.innerHeight-1080*sc)/2)+'px';
+  s.style.position='absolute';
+}
+window.addEventListener('resize',scaleStage); scaleStage();
+
+// ── Particles ─────────────────────────────────────────────────────────────────
+const cvs=document.getElementById('bg'), ctx=cvs.getContext('2d');
+cvs.width=1920; cvs.height=1080;
+const PTS=[];
+for(let i=0;i<100;i++){
+  PTS.push({
+    x:Math.random()*1920, y:Math.random()*1080,
+    vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+    r:Math.random()*1.5+.5,
+    c:Math.random()>.75?'247,147,26':'0,212,255'
+  });
+}
+function drawPts(){
+  ctx.clearRect(0,0,1920,1080);
+  for(let i=0;i<PTS.length;i++){
+    const p=PTS[i];
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>1920)p.vx*=-1;
+    if(p.y<0||p.y>1080)p.vy*=-1;
+    for(let j=i+1;j<PTS.length;j++){
+      const q=PTS[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.hypot(dx,dy);
+      if(d<200){
+        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle=`rgba(0,212,255,${(1-d/200)*.09})`; ctx.lineWidth=1; ctx.stroke();
+      }
+    }
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${p.c},.4)`; ctx.fill();
+  }
+  requestAnimationFrame(drawPts);
+}
+drawPts();
+
+// ── Build Scene 2: Timeline ────────────────────────────────────────────────────
+const TL=[
+  {y:'1760',  l:'Rev.\nIndustrial'},
+  {y:'1870',  l:'Rev.\nElectricidad'},
+  {y:'1950',  l:'Rev.\nDigital'},
+  {y:'1990s', l:'Web 1'},
+  {y:'2000s', l:'Web 2'},
+  {y:'2015',  l:'Web 3'},
+  {y:'2025 🚀',l:'WEB 4', last:true},
+];
+const s2n=document.getElementById('s2nodes');
+TL.forEach((d,i)=>{
+  const el=document.createElement('div');
+  el.className='s2-node'+(d.last?' last':'');
+  el.id='tn'+i;
+  el.innerHTML=`<div class="s2-dot"></div><div class="s2-year">${d.y}</div><div class="s2-label">${d.l.replace('\n','<br>')}</div>`;
+  s2n.appendChild(el);
+});
+
+// ── Build Scene 3: Web Cards ───────────────────────────────────────────────────
+const WEB=[
+  {n:'1',col:'#2d3f57',eq:'Lectura',desc:'Internet estático.<br>Información de solo lectura.',cls:''},
+  {n:'2',col:'#3b82f6',eq:'Interacción',desc:'Redes sociales, participación,<br>pero monopolio de datos.',cls:''},
+  {n:'3',col:'#a78bfa',eq:'Descentralización',desc:'Blockchain, cripto,<br>soberanía digital.',cls:''},
+  {n:'4',col:'#f7931a',eq:'Convergencia Exponencial',desc:'IA + Blockchain + AR/VR + IoT',cls:'w4'},
+];
+const s3r=document.getElementById('s3row');
+WEB.forEach((d,i)=>{
+  if(i>0){
+    const a=document.createElement('div');
+    a.className='s3-arrow'; a.id='wa'+i; a.textContent='›'; s3r.appendChild(a);
+  }
+  const c=document.createElement('div');
+  c.className='s3-card '+d.cls; c.id='wc'+i;
+  c.innerHTML=`<div class="s3-gen">Generación ${i+1}</div><div class="s3-webnum" style="color:${d.col}${d.cls?';text-shadow:0 0 35px rgba(247,147,26,.5)':''}">WEB${d.n}</div><div class="s3-eq">${d.eq}</div><div class="s3-desc">${d.desc}</div>`;
+  s3r.appendChild(c);
+});
+
+// ── Build Scene 4: Impact ─────────────────────────────────────────────────────
+const IMP=[
+  {ico:'💰',sec:'Finanzas',col:'#22c55e',main:'DeFi & Soberanía Económica',desc:'Pagos automáticos, contratos inteligentes. La soberanía económica personal deja de ser una utopía.'},
+  {ico:'💼',sec:'Trabajo',col:'#6366f1',main:'IA en Cada Proceso',desc:'Contratos inteligentes aseguran relaciones laborales más justas. Nuevas profesiones emergen.'},
+  {ico:'🏥',sec:'Salud',col:'#00D4FF',main:'Medicina Personalizada',desc:'Preventiva y en tiempo real. Tu wearable envía datos médicos seguros via IoT + blockchain.'},
+  {ico:'🌐',sec:'Relaciones',col:'#f7931a',main:'Espacios Inmersivos',desc:'Con AR/VR, convives, colaboras y aprendes con personas de todo el mundo en entornos virtuales.'},
+];
+const s4g=document.getElementById('s4grid');
+IMP.forEach((d,i)=>{
+  const c=document.createElement('div');
+  c.className='s4-card'; c.id='ic'+i;
+  c.style.borderColor=d.col+'28';
+  c.innerHTML=`<span class="s4-icon">${d.ico}</span><div class="s4-sector" style="color:${d.col}">${d.sec}</div><div class="s4-main">${d.main}</div><div class="s4-desc">${d.desc}</div>`;
+  s4g.appendChild(c);
+});
+
+// ── Sequencer ─────────────────────────────────────────────────────────────────
+const SEQS=[
+  ['s1',   0,  8000],
+  ['s2',8000, 21000],
+  ['s3',21000,34000],
+  ['s4',34000,51000],
+  ['s5',51000,66000],
+  ['s6',66000,77000],
+];
+const TOTAL=77000;
+let t0=Date.now();
+let did={s2:false,s3:false,s4:false};
+let timers=[];
+
+function startTL(){
+  const fill=document.getElementById('s2fill');
+  fill.style.width='calc(100% - 28px)';
+  TL.forEach((_,i)=>{
+    timers.push(setTimeout(()=>{ const el=document.getElementById('tn'+i); if(el)el.classList.add('lit'); }, 500+i*1600));
+  });
+}
+function startWebCards(){
+  WEB.forEach((_,i)=>{
+    timers.push(setTimeout(()=>{
+      const c=document.getElementById('wc'+i); if(c)c.classList.add('show');
+      if(i>0){const a=document.getElementById('wa'+i);if(a)a.classList.add('show');}
+    },200+i*800));
+  });
+}
+function startImpact(){
+  IMP.forEach((_,i)=>{
+    timers.push(setTimeout(()=>{ const c=document.getElementById('ic'+i);if(c)c.classList.add('show'); },200+i*600));
+  });
+}
+
+function tick(){
+  const el=Date.now()-t0;
+  const pct=Math.min(el/TOTAL,1);
+  document.getElementById('prog').style.width=(pct*100)+'%';
+
+  let cur=null;
+  for(const [id,s,e] of SEQS){if(el>=s&&el<e){cur=id;break;}}
+  if(el>=TOTAL)cur='s6';
+
+  document.querySelectorAll('.sc').forEach(sc=>{
+    sc.id===cur?sc.classList.add('on'):sc.classList.remove('on');
+  });
+
+  if(cur==='s2'&&!did.s2){did.s2=true;setTimeout(startTL,400);}
+  if(cur==='s3'&&!did.s3){did.s3=true;setTimeout(startWebCards,300);}
+  if(cur==='s4'&&!did.s4){did.s4=true;setTimeout(startImpact,300);}
+
+  if(el<TOTAL+3000)requestAnimationFrame(tick);
+}
+
+function doRestart(){
+  timers.forEach(clearTimeout); timers=[];
+  did={s2:false,s3:false,s4:false};
+  document.getElementById('s2fill').style.transition='none';
+  document.getElementById('s2fill').style.width='0';
+  setTimeout(()=>{document.getElementById('s2fill').style.transition='width 2.8s cubic-bezier(.4,0,.2,1)';},50);
+  document.querySelectorAll('.s2-node').forEach(n=>n.classList.remove('lit'));
+  document.querySelectorAll('.s3-card,.s3-arrow').forEach(e=>e.classList.remove('show'));
+  document.querySelectorAll('.s4-card').forEach(e=>e.classList.remove('show'));
+  document.querySelectorAll('.sc').forEach(sc=>sc.classList.remove('on'));
+  document.getElementById('s1').classList.add('on');
+  document.getElementById('prog').style.width='0';
+  t0=Date.now();
+  requestAnimationFrame(tick);
+}
+
+tick();
+document.addEventListener('keydown',e=>{if(e.code==='Space')doRestart();});
+document.addEventListener('click',doRestart);
+</script>
+</body>
+</html>
