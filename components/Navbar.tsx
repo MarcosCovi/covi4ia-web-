@@ -121,4 +121,125 @@ export default function Navbar() {
                             <div className="text-xs text-brand-mid-gray">{s.sub}</div>
                           </div>
                         </Link>
- 
+                      ))}
+                      <div className="h-px bg-white/5 mx-4 my-1.5" />
+                      {serviciosDropdown.filter(s => s.group !== 'Aprendemos').map(s => (
+                        <Link key={s.href} href={s.href}
+                          onClick={() => setDropdownOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
+                          <div style={{ width: 3, height: 30, borderRadius: 3, background: s.color, flexShrink: 0 }} />
+                          <div>
+                            <div className="text-sm font-semibold" style={{ color: s.color }}>{s.label}</div>
+                            <div className="text-xs text-brand-mid-gray">{s.sub}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Nav links */}
+                {navLinks.map(link => (
+                  <button key={link.label} onClick={() => scrollTo(link.href)}
+                    className="text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
+                    {link.label}
+                  </button>
+                ))}
+
+                {/* Explorar dropdown */}
+                <div className="relative" ref={explorarRef}>
+                  <button
+                    onClick={() => setExplorarOpen(!explorarOpen)}
+                    className="flex items-center gap-1 text-sm text-brand-mid-gray hover:text-white transition-colors duration-200 font-medium">
+                    Explorar
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${explorarOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {explorarOpen && (
+                    <div className="absolute top-full right-0 mt-3 w-64 rounded-xl border border-white/10 bg-brand-navy-mid shadow-2xl shadow-black/40 py-2 z-50">
+                      {explorarLinks.map(link =>
+                        link.isRoute ? (
+                          <Link key={link.label} href={link.href}
+                            onClick={() => setExplorarOpen(false)}
+                            className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors">
+                            <div style={{ width: 3, height: 30, borderRadius: 3, background: link.color, flexShrink: 0 }} />
+                            <div>
+                              <div className="text-sm font-semibold" style={{ color: link.color }}>{link.label}</div>
+                              <div className="text-xs text-brand-mid-gray">{link.sub}</div>
+                            </div>
+                          </Link>
+                        ) : (
+                          <button key={link.label} onClick={() => scrollTo(link.href)}
+                            className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-left">
+                            <div style={{ width: 3, height: 30, borderRadius: 3, background: link.color, flexShrink: 0 }} />
+                            <div>
+                              <div className="text-sm font-semibold" style={{ color: link.color }}>{link.label}</div>
+                              <div className="text-xs text-brand-mid-gray">{link.sub}</div>
+                            </div>
+                          </button>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Hablemos */}
+                <button onClick={() => scrollTo('#contacto')}
+                  className="flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200"
+                  style={{ background: 'linear-gradient(135deg, #00D4FF, #0099bb)' }}>
+                  Hablemos
+                </button>
+              </>
+            )}
+          </nav>
+
+          {/* Mobile hamburger */}
+          {!isCovicoin && (
+            <button onClick={() => setOpen(!open)}
+              className="md:hidden text-brand-mid-gray hover:text-white transition-colors">
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          )}
+
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {!isCovicoin && open && (
+        <div className="md:hidden border-t border-white/5 bg-brand-navy/98 backdrop-blur-md">
+          <div className="px-4 py-4 space-y-1">
+            <button onClick={() => scrollTo('#servicios')}
+              className="w-full text-left px-3 py-2.5 text-sm text-brand-mid-gray hover:text-white transition-colors">
+              Servicios
+            </button>
+            {navLinks.map(link => (
+              <button key={link.label} onClick={() => scrollTo(link.href)}
+                className="w-full text-left px-3 py-2.5 text-sm text-brand-mid-gray hover:text-white transition-colors">
+                {link.label}
+              </button>
+            ))}
+            <div className="h-px bg-white/5 my-2" />
+            {explorarLinks.map(link =>
+              link.isRoute ? (
+                <Link key={link.label} href={link.href} onClick={() => setOpen(false)}
+                  className="block px-3 py-2.5 text-sm font-semibold" style={{ color: link.color }}>
+                  {link.label}
+                </Link>
+              ) : (
+                <button key={link.label} onClick={() => scrollTo(link.href)}
+                  className="w-full text-left px-3 py-2.5 text-sm font-semibold" style={{ color: link.color }}>
+                  {link.label}
+                </button>
+              )
+            )}
+            <div className="h-px bg-white/5 my-2" />
+            <button onClick={() => scrollTo('#contacto')}
+              className="w-full px-3 py-2.5 rounded-lg text-sm font-semibold text-white"
+              style={{ background: 'linear-gradient(135deg, #00D4FF, #0099bb)' }}>
+              Hablemos
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  )
+}

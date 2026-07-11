@@ -603,4 +603,6 @@ export default function CovicoinAlphaFullReport() {
         </div>
 
       </div>
-    <
+    </div>
+  );
+}
