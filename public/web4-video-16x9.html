@@ -99,22 +99,42 @@ html,body{width:100vw;height:100vh;background:#000;overflow:hidden;display:flex;
 .s6-url{font-size:22px;color:#00D4FF;letter-spacing:4px}
 .s6-slogan{font-size:11px;letter-spacing:7px;text-transform:uppercase;color:#1e2d45;margin-top:4px}
 
-/* ── Text legibility ─────────────────────────── */
-.s3-card,.s3-card-v{background:rgba(2,6,16,0.76)!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.s4-card,.s4-card-v{background:rgba(2,6,16,0.74)!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.s5-subs,.s5-subs-v{background:rgba(2,6,16,0.60);border-radius:18px;padding:28px 36px}
-.s1-title{text-shadow:0 2px 30px rgba(0,0,0,1),0 0 60px rgba(0,0,0,.9)!important}
-.s6-l2,.s6-l2-v{text-shadow:0 2px 40px rgba(0,0,0,1),0 4px 16px rgba(0,0,0,.95)!important}
-.s6-l1,.s6-l1-v,.s6-l0-v{text-shadow:0 2px 16px rgba(0,0,0,1)!important}
-.s6-l0-v{background:rgba(2,6,16,0.55);border-radius:14px;padding:20px 30px}
-.s5-l1,.s5-l2,.s5-l1-v,.s5-l2-v{text-shadow:0 2px 24px rgba(0,0,0,1),0 1px 8px rgba(0,0,0,1)!important}
-.s5-eye,.s2-head,.s3-head{text-shadow:0 1px 10px rgba(0,0,0,.95)!important}
-.s4-head,.s4-head-v{text-shadow:0 2px 20px rgba(0,0,0,1)!important}
-.s4-main,.s4-main-v{color:#ffffff!important;text-shadow:0 1px 10px rgba(0,0,0,.9)!important}
-.s4-desc,.s4-desc-v{color:#94a3b8!important}
-.s4-sector,.s4-sector-v{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
-.s5-text-v p,.s5-sub .s5-text p{color:#94a3b8!important}
-.s5-sub-v strong,.s5-sub strong{color:#64748b!important;text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+/* ── Luminous white text on image background ─── */
+.s3-card,.s3-card-v{background:rgba(1,4,14,0.72)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-color:rgba(0,212,255,0.12)!important}
+.s4-card,.s4-card-v{background:rgba(1,4,14,0.70)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.s5-subs,.s5-subs-v{background:rgba(1,4,14,0.65);border-radius:18px;padding:28px 36px;border:1px solid rgba(0,212,255,0.08)}
+/* S1 */
+.s1-title{text-shadow:0 0 80px rgba(255,255,255,0.25),0 0 160px rgba(0,212,255,0.15)!important}
+.s1-tag{color:#c4cfe0!important;text-shadow:0 0 20px rgba(255,255,255,0.4)!important}
+.s1-sub{color:#c4cfe0!important;text-shadow:0 0 18px rgba(255,255,255,0.35)!important}
+.s1-formula{color:#94a3b8!important;text-shadow:0 0 12px rgba(0,0,0,0.9)!important}
+/* S2 */
+.s2-head{color:#00D4FF!important;text-shadow:0 0 30px rgba(0,212,255,0.7),0 0 60px rgba(0,212,255,0.3)!important}
+.s2-year{color:#94a3b8!important}
+.s2-label{color:#64748b!important}
+.s2-node.lit .s2-year{color:#00D4FF!important;text-shadow:0 0 16px rgba(0,212,255,0.6)!important}
+.s2-node.lit .s2-label{color:#a0aec0!important}
+/* S3 */
+.s3-head{color:#a0aec0!important;text-shadow:0 0 16px rgba(255,255,255,0.3)!important}
+.s3-gen{color:#64748b!important}
+.s3-eq{color:#c4cfe0!important;text-shadow:0 0 12px rgba(255,255,255,0.25)!important}
+.s3-desc{color:#94a3b8!important}
+/* S4 */
+.s4-head,.s4-head-v{text-shadow:0 0 40px rgba(255,255,255,0.2),0 0 80px rgba(0,212,255,0.15)!important}
+.s4-main,.s4-main-v{color:#ffffff!important;text-shadow:0 0 20px rgba(255,255,255,0.5)!important}
+.s4-desc,.s4-desc-v{color:#a0aec0!important}
+.s4-sector,.s4-sector-v{text-shadow:0 0 12px currentColor!important}
+/* S5 */
+.s5-eyebrow{color:#a0aec0!important;text-shadow:0 0 14px rgba(255,255,255,0.3)!important}
+.s5-l1,.s5-l1-v{color:#c4cfe0!important;text-shadow:0 0 40px rgba(255,255,255,0.3),0 0 80px rgba(0,212,255,0.1)!important}
+.s5-l2,.s5-l2-v{text-shadow:0 0 50px rgba(255,255,255,0.4),0 0 100px rgba(0,212,255,0.15)!important}
+.s5-sub-v strong,.s5-sub strong{color:#a0aec0!important;text-shadow:0 0 14px rgba(255,255,255,0.3)!important}
+.s5-text-v p,.s5-sub .s5-text p,.s5-sub p{color:#94a3b8!important}
+/* S6 */
+.s6-l0{color:#e2e8f0!important;text-shadow:0 0 30px rgba(255,255,255,0.35)!important}
+.s6-l1,.s6-l1-v{color:#d1d5db!important;text-shadow:0 0 30px rgba(255,255,255,0.3)!important}
+.s6-l2,.s6-l2-v{text-shadow:0 0 80px rgba(255,255,255,0.4),0 0 160px rgba(0,212,255,0.2)!important}
+.s6-slogan{color:#64748b!important}
 /* ───────────────────────────────────────────── */
 </style>
 </head>
@@ -208,6 +228,12 @@ function scaleStage(){
 }
 window.addEventListener('resize',scaleStage); scaleStage();
 
+// ── Background image ──────────────────────────────────────────────────────────
+const bgImg=new Image();
+let bgLoaded=false;
+bgImg.onload=()=>{bgLoaded=true;};
+bgImg.src='/web4-bg.jpg';
+
 // ── Particles ─────────────────────────────────────────────────────────────────
 const cvs=document.getElementById('bg'), ctx=cvs.getContext('2d');
 cvs.width=1920; cvs.height=1080;
@@ -249,28 +275,39 @@ const CUBES=[];
 function drawPts(){
   ctx.clearRect(0,0,1920,1080);
 
-  /* ── Rich BG ── */
-  const _g=ctx.createLinearGradient(0,0,0,1080);
-  _g.addColorStop(0,'#010406'); _g.addColorStop(0.38,'#020c18');
-  _g.addColorStop(0.68,'#041220'); _g.addColorStop(1,'#010608');
-  ctx.fillStyle=_g; ctx.fillRect(0,0,1920,1080);
-  /* horizon ambient */
-  let _hg=ctx.createRadialGradient(960,702,0,960,702,998);
-  _hg.addColorStop(0,'rgba(0,70,180,0.16)'); _hg.addColorStop(1,'rgba(0,0,0,0)');
-  ctx.fillStyle=_hg; ctx.fillRect(0,0,1920,1080);
-  /* holographic glow */
-  let _rg=ctx.createRadialGradient(1401,410,0,1401,410,614);
-  _rg.addColorStop(0,'rgba(0,130,255,0.12)'); _rg.addColorStop(1,'rgba(0,0,0,0)');
-  ctx.fillStyle=_rg; ctx.fillRect(0,0,1920,1080);
-  /* city lights */
-  CITY.forEach(_l=>{ ctx.beginPath(); ctx.arc(_l.x,_l.y,_l.r,0,Math.PI*2); ctx.fillStyle=`rgba(${_l.cl},${_l.a})`; ctx.fill(); });
-  /* horizon line */
-  ctx.save();
-  let _hl=ctx.createLinearGradient(0,0,1920,0);
-  _hl.addColorStop(0,'rgba(0,212,255,0)'); _hl.addColorStop(0.3,'rgba(0,212,255,0.13)');
-  _hl.addColorStop(0.7,'rgba(0,212,255,0.13)'); _hl.addColorStop(1,'rgba(0,212,255,0)');
-  ctx.strokeStyle=_hl; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,702); ctx.lineTo(1920,702); ctx.stroke();
-  ctx.restore();
+  if(bgLoaded){
+    /* ── Imagen de fondo: cover-fit ── */
+    const iw=bgImg.naturalWidth||1080, ih=bgImg.naturalHeight||1080;
+    const sc=Math.max(1920/iw,1080/ih);
+    const dw=iw*sc, dh=ih*sc;
+    const dx=(1920-dw)/2, dy=(1080-dh)/2;
+    ctx.drawImage(bgImg,dx,dy,dw,dh);
+    /* Dark overlay for legibility (70% oscuro) */
+    ctx.fillStyle='rgba(1,4,14,0.70)'; ctx.fillRect(0,0,1920,1080);
+    /* Cyan horizon glow encima */
+    let _hg=ctx.createRadialGradient(960,680,0,960,680,880);
+    _hg.addColorStop(0,'rgba(0,80,200,0.18)'); _hg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=_hg; ctx.fillRect(0,0,1920,1080);
+  } else {
+    /* ── Fallback gradient ── */
+    const _g=ctx.createLinearGradient(0,0,0,1080);
+    _g.addColorStop(0,'#010406'); _g.addColorStop(0.38,'#020c18');
+    _g.addColorStop(0.68,'#041220'); _g.addColorStop(1,'#010608');
+    ctx.fillStyle=_g; ctx.fillRect(0,0,1920,1080);
+    let _hg=ctx.createRadialGradient(960,702,0,960,702,998);
+    _hg.addColorStop(0,'rgba(0,70,180,0.16)'); _hg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=_hg; ctx.fillRect(0,0,1920,1080);
+    let _rg=ctx.createRadialGradient(1401,410,0,1401,410,614);
+    _rg.addColorStop(0,'rgba(0,130,255,0.12)'); _rg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=_rg; ctx.fillRect(0,0,1920,1080);
+    CITY.forEach(_l=>{ ctx.beginPath(); ctx.arc(_l.x,_l.y,_l.r,0,Math.PI*2); ctx.fillStyle=`rgba(${_l.cl},${_l.a})`; ctx.fill(); });
+    ctx.save();
+    let _hl=ctx.createLinearGradient(0,0,1920,0);
+    _hl.addColorStop(0,'rgba(0,212,255,0)'); _hl.addColorStop(0.3,'rgba(0,212,255,0.13)');
+    _hl.addColorStop(0.7,'rgba(0,212,255,0.13)'); _hl.addColorStop(1,'rgba(0,212,255,0)');
+    ctx.strokeStyle=_hl; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,702); ctx.lineTo(1920,702); ctx.stroke();
+    ctx.restore();
+  }
   /* blockchain cubes */
   CUBES.forEach(_b=>{
     _b.rot+=_b.vr; ctx.save(); ctx.translate(_b.x,_b.y); ctx.rotate(_b.rot);
