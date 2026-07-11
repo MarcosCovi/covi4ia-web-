@@ -1,11 +1,13 @@
 'use client'
 import { useState } from 'react'
+import Navbar from '@/components/Navbar'
 
 export default function Web4Page() {
   const [format, setFormat] = useState<'16x9' | '9x16'>('16x9')
 
   return (
     <main style={{ minHeight: '100vh', background: '#060a14', display: 'flex', flexDirection: 'column' }}>
+      <Navbar />
       {/* Header */}
       <div style={{
         paddingTop: 96,
