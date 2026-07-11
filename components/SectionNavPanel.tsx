@@ -70,7 +70,7 @@ const header: CSSProperties = {
 
 export default function SectionNavPanel() {
   return (
-    <div className="hidden 2xl:block" style={panel}>
+    <div className="hidden xl:block" style={panel}>
       {/* Header */}
       <div style={header}>
         <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#00D4FF' }} />
